@@ -1,6 +1,8 @@
+import Hero from "./Hero"
+
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className='h-screen'><Hero/></div>
   )
 }
 
