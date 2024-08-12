@@ -4,9 +4,8 @@ import Footer from './Footer'
 
 
 const AppLayout = () => {
-  console.log("HEY")
   return (
-    <div>
+    <div className='min-h-screen'>
       <Header />
       <div>
         <Outlet />

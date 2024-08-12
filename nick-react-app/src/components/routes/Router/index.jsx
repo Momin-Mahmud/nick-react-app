@@ -8,7 +8,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<AppLayout />}>
-        <Route path='/dashboard' element= {<Dashboard/>}/>
+        <Route path='/' element= {<Dashboard/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
