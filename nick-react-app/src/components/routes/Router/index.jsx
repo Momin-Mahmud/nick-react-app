@@ -1,4 +1,4 @@
-import Dashboard from "../../../pages/Dasboard"
+import Home from "../../../pages/Home"
 import AppLayout from "./layout/AppLayout"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -8,7 +8,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<AppLayout />}>
-        <Route path='/' element= {<Dashboard/>}/>
+        <Route path='/' element= {<Home/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
