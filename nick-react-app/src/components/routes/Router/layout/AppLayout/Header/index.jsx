@@ -40,7 +40,7 @@ const Header = () => {
   >
     <div className='flex lg:flex-1 gap-4'>
       <span className='-m-1.5 p-1.5'>
-        <Icon size='30' name='avatar' className='' />
+        <Icon size='30' name='logo' className='' />
       </span>
       <span className='text-black tracking-tight font-black'>
         salescopilots 

@@ -1,5 +1,6 @@
+import Icon from "../../../utils/Icon";
 // eslint-disable-next-line react/prop-types
-const Button = ({ innerText = '', onClick, type = 'primary', size = 'medium' }) => {
+const Button = ({ innerText = '', onClick, type = 'primary', size = 'medium', icon, iconSize, className }) => {
   console.log('innerText', innerText);
 
   const variant = () => {
@@ -29,7 +30,8 @@ const Button = ({ innerText = '', onClick, type = 'primary', size = 'medium' }) 
   };
 
   return (
-    <button onClick={onClick} type='button' className={`${variant()} ${sizeVariant()}`}>
+    <button onClick={onClick} type='button' className={` flex items-center justify-center gap-2 ${variant()} ${sizeVariant()} ${className}`}>
+      {icon && <Icon name={icon} size={iconSize} />}
       {innerText}
     </button>
   )
