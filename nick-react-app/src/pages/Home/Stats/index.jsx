@@ -26,10 +26,12 @@ const Stats = () => {
   ];
   return (
     <div className="bg-[#F9FAFB] py-16 px-24">
-      <div className="text-4xl font-bold mb-8">A headline to make a big impact</div>
+      <div className="text-4xl font-bold mb-8">
+        A headline to make a big impact
+      </div>
       <span className="flex">
         {stats.map((item, index) => (
-          <span className={index==1?"mx-16":""}>
+          <span className={index == 1 ? "mx-16" : ""}>
             <StatsCards
               key={index} // Adding a key is important when rendering lists in React
               number={item?.number}
@@ -41,9 +43,16 @@ const Stats = () => {
         ))}
       </span>
 
-      <span className="flex mt-8 justify-between">
-        <Button innerText="Primary Action"/>
-        <Rating rating={5}/>
+      <span className="flex mt-8 justify-center items-center">
+        <span className="">
+          <Button innerText="Primary Action" />
+        </span>
+        <span className="mx-5">
+          <Rating rating={5}/>
+        </span>
+        <span className="text-[#6B7280]-400">
+        from 1000+ reviews
+        </span>
       </span>
     </div>
   );
