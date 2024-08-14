@@ -1,16 +1,21 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 
 const AppLayout = () => {
+
+  const { pathname } = useLocation()
+  const renderHeader = () =>  (pathname !== '/login' && pathname !== '/chat') && <Header/>  
+
+
   return (
     <div className='min-h-screen'>
-      <Header />
+      {renderHeader()}
       <div>
         <Outlet />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

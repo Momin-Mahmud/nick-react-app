@@ -1,6 +1,8 @@
 import Icon from '../../../../../../utils/Icon';
 import { useState } from 'react';
 import Button from '../../../../../base/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import NavItem from './NavItem';
 
 const ProspectList = ({ isOpen }) => {
   const prospects = [
@@ -70,10 +72,11 @@ const DiscoveryList = ({ isOpen }) => {
 const Sidebar = () => {
   const [prospectsOpen, setProspectsOpen] = useState(false);
   const [discoveriesOpen, setDiscoveriesOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div className='min-h-screen w-[200px] p-2 border-r flex flex-col gap-4 justify-start items-center'>
-      <div className='flex gap-4 items-center justify-between'>
+    <div className='h-screen overflow-y-auto w-[calc(100vw-85vw)] p-2 border-r flex flex-col gap-4 justify-start items-center'>
+      <div className='flex gap-4 items-center justify-between mt-3'>
         <div className='flex gap-2 items-center'>
           <Icon name={'logo'} size='26' />
           <span className='text-black tracking-tight font-black'>
@@ -102,12 +105,7 @@ const Sidebar = () => {
         </form>
       </div>
       <div className='flex flex-col items-start justify-start min-w-full gap-2'>
-        <div className='flex items-center text-start justify-start gap-1 min-w-full bg-[#F5F3FF] p-2 rounded-lg'>
-          <Icon name='home' size='22' />
-          <span className='text-[#6D28D9] tracking-tight text-sm mt-1 font-medium'>
-            Home
-          </span>
-        </div>
+        <NavItem className='mt-1' icon='homeBlack' selectedIcon='home' size='22' text='Home'/>
         <div className='flex flex-col gap-0 items-center justify-center min-w-full cursor-pointer hover:bg-[#F5F3FF]'>
           <div className='flex items-center justify-between gap-1 min-w-full'>
             <div className='flex items-center text-start justify-between gap-2 min-w-full p-2 rounded-lg'>
@@ -162,24 +160,9 @@ const Sidebar = () => {
           <span className='tracking-tight text-[#737373] text-xs min-w-full font-medium'>
             Manage
           </span>
-          <div className='flex items-center text-start justify-start gap-1 min-w-full p-2 rounded-lg cursor-pointer hover:bg-[#F5F3FF]'>
-          <Icon name='myCompany' size='16' />
-          <span className=' tracking-tight text-sm mt-1 font-medium'>
-            My company
-          </span>
-        </div>
-        <div className='flex items-center text-start justify-start gap-1 min-w-full p-2 rounded-lg cursor-pointer hover:bg-[#F5F3FF]'>
-          <Icon name='personas' size='16' />
-          <span className=' tracking-tight text-sm mt-1 font-medium'>
-            Personas
-          </span>
-        </div>
-        <div className='flex items-center text-start justify-start gap-1 min-w-full p-2 rounded-lg cursor-pointer hover:bg-[#F5F3FF]'>
-          <Icon name='integrations' size='16' />
-          <span className=' tracking-tight text-sm mt-1 font-medium'>
-            Integrations
-          </span>
-        </div>
+          <NavItem icon='myCompany' selectedIcon='myCompany' size='16' text='My company' />
+          <NavItem icon = 'personas' size={16} text={'Personas'} />
+          <NavItem icon= 'integrations' size='16' text={'Integrations'} />
         </div>
       </div>
       <div className='flex flex-col items-start justify-start min-w-full gap-2 p-2 mt-2'>
@@ -192,21 +175,11 @@ const Sidebar = () => {
       </div>
       <div className='min-w-full p-2'>
         <div className='flex flex-col items-center text-start justify-start gap-1 min-w-full rounded-lg'>
-          <div className='flex items-center text-start justify-start gap-1 min-w-full p-2 rounded-lg cursor-pointer hover:bg-[#F5F3FF]'>
-          <Icon name='support' size='16' />
-          <span className=' tracking-tight text-sm font-medium'>
-            Support
-          </span>
-        </div>
-        <div className='flex items-center text-start justify-start gap-1 min-w-full p-2 rounded-lg cursor-pointer hover:bg-[#F5F3FF]'>
-          <Icon name='settings' size='16' />
-          <span className=' tracking-tight text-sm  font-medium'>
-            Settings
-          </span>
-        </div>
+          <NavItem icon='support' selectedIcon='support' size='16' text='Support' />
+          <NavItem icon='settings' size= '16' text = 'Settings' />
         </div>
       </div>
-      <div className='min-w-full flex gap-2 py-3 rounded-md items-center justify-center bg-[#F3F4F6]'>
+      <div className='min-w-full flex gap-2 py-1 rounded-md items-center justify-center bg-[#F3F4F6]'>
           <img src={'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="logo" className='w-8 h-8 object-cover rounded-full'/>
           <div className='flex flex-col items-start'>
             <span className='text-[10px] font-bold'>
@@ -216,7 +189,7 @@ const Sidebar = () => {
                 johnsmith@gmail...
             </span>
           </div>
-          <Icon name='logout' size='16'/>
+          <Icon className={'cursor-pointer'} onClick={() => navigate('/')} name='logout' size='16'/>
       </div>
     </div>
   );
