@@ -3,7 +3,7 @@ import NewsCard from "../../../components/base/NewsCard/NewsCard";
 
 const News = () => {
   return (
-    <div className="px-24">
+    <div className="p-24">
       <NewsCard
         title="A catchy heading that brings some interest to visitors"
         description="Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean. Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."

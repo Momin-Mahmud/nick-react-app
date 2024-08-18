@@ -397,7 +397,16 @@ export const iconsList = {
     path:<path d="M1.5 9L8.5 1.5L7 7H12.5L5.5 14.5L7 9H1.5Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>,
     viewBox:"0 0 14 16"
   }
+  ,
+  searchIcon:{
+    path:<path d="M15 15L10.3333 10.3333M11.8889 6.44444C11.8889 9.45133 9.45133 11.8889 6.44444 11.8889C3.43756 11.8889 1 9.45133 1 6.44444C1 3.43756 3.43756 1 6.44444 1C9.45133 1 11.8889 3.43756 11.8889 6.44444Z" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>,
+    viewBox:"0 0 16 16"
+  },
+
+  pause:{
+
+    rect:<rect opacity="0.2" width="16" height="16" rx="3" fill="#A21CAF"/>,
+    viewBox:"0 0 16 16"
+
+  }
 };
-
-
-

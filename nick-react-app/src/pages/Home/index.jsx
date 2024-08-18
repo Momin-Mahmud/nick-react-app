@@ -1,3 +1,4 @@
+import FAQ from "./FAQ";
 import Hero from "./Hero";
 import News from "./News";
 import Stats from "./Stats";
@@ -7,6 +8,7 @@ const Home = () => {
       <Hero />
       <Stats/>
       <News />
+      <FAQ/>
     </div>
   );
 };
