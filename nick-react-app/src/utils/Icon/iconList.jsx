@@ -393,4 +393,11 @@ export const iconsList = {
     ),
     viewBox: "0 0 20 20",
   },
+  thunderBolt:{
+    path:<path d="M1.5 9L8.5 1.5L7 7H12.5L5.5 14.5L7 9H1.5Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>,
+    viewBox:"0 0 14 16"
+  }
 };
+
+
+

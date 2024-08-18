@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from './Header'
-// import Footer from './Footer'
+import Footer from './Footer'
 
 
 const AppLayout = () => {
@@ -15,7 +15,7 @@ const AppLayout = () => {
       <div>
         <Outlet />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

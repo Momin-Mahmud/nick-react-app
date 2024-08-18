@@ -31,7 +31,7 @@ const Stats = () => {
       </div>
       <span className="flex">
         {stats.map((item, index) => (
-          <span className={index == 1 ? "mx-16" : ""}>
+          <span className={index == 1 ? "mx-28" : ""}>
             <StatsCards
               key={index} // Adding a key is important when rendering lists in React
               number={item?.number}
