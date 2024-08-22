@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from "../../../pages/Login"
 import ChatHome from "../../../pages/ChatHome"
 import ProspectingCopilot from "../../../pages/ProspectingCopilot"
+import MyCompany from "../../../pages/MyCompany"
 
 const Router = () => {
   console.log("HEY ROUTER")
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path= '/chat' element= {<ChatHome/>}/>
         <Route path='/login' element= {<Login/>}/>
         <Route path= 'prospecting' element= {<ProspectingCopilot/>} />
+        <Route path = '/company' element = {<MyCompany/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

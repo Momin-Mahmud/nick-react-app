@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 const AppLayout = () => {
 
   const { pathname } = useLocation()
-  const checkPages = () =>  (pathname !== '/login' && pathname !== '/chat' && pathname !== '/prospecting')  
+  const checkPages = () =>  (pathname !== '/login' && pathname !== '/chat' && pathname !== '/prospecting' && pathname !== '/company')  
 
 
   return (
