@@ -1,8 +1,9 @@
 import Home from "../../../pages/Home"
 import AppLayout from "./layout/AppLayout"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Sidebar from "./layout/AppLayout/Sidebar"
 import Login from "../../../pages/Login"
+import ChatHome from "../../../pages/ChatHome"
+import ProspectingCopilot from "../../../pages/ProspectingCopilot"
 
 const Router = () => {
   console.log("HEY ROUTER")
@@ -11,8 +12,9 @@ const Router = () => {
       <Routes>
         <Route path='/' element={<AppLayout />}>
         <Route path='/' element= {<Home/>}/>
-        <Route path= '/chat' element= {<Sidebar/>}/>
+        <Route path= '/chat' element= {<ChatHome/>}/>
         <Route path='/login' element= {<Login/>}/>
+        <Route path= 'prospecting' element= {<ProspectingCopilot/>} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import { iconsList } from "./iconList"
 
 // eslint-disable-next-line react/prop-types
-const Icon = ({name, size = '10', color, className, transform = 'none', onClick}) => {
+const Icon = ({name = '', size = '10', color = '', className = '', transform = 'none', onClick = () => {}}) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
