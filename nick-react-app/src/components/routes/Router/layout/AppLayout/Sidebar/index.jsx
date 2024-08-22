@@ -105,8 +105,8 @@ const Sidebar = () => {
         </form>
       </div>
       <div className='flex flex-col items-start justify-start min-w-full gap-2'>
-        <NavItem className='mt-1' icon='homeBlack' selectedIcon='home' size='22' text='Home'/>
-        <div className='flex flex-col gap-0 items-center justify-center min-w-full cursor-pointer hover:bg-[#F5F3FF]'>
+        <NavItem navigationPath={'/chat'} className='mt-1' icon='homeBlack' selectedIcon='home' size='22' text='Home'/>
+        <div className='flex flex-col gap-0 items-center justify-center min-w-full cursor-pointer hover:bg-[#F5F3FF]' onClick={() => navigate('/prospecting')}>
           <div className='flex items-center justify-between gap-1 min-w-full'>
             <div className='flex items-center text-start justify-between gap-2 min-w-full p-2 rounded-lg'>
               <div className='flex items-center gap-1'>
@@ -165,15 +165,7 @@ const Sidebar = () => {
           <NavItem icon= 'integrations' size='16' text={'Integrations'} />
         </div>
       </div>
-      <div className='flex flex-col items-start justify-start min-w-full gap-2 p-2 mt-2'>
-      <div className='flex min-w-full gap-1'>
-        <Icon size='30' name='credits'/>
-        <span className='font-bold text-lg'>250/250</span>
-      </div>
-       <span className='text-xs text-[#999999]'>Credits reset in 30 days</span>
-       <Button className={'mt-2 min-w-full'} icon='currency' iconSize={16} size='small' innerText='Get More Credits' />
-      </div>
-      <div className='min-w-full p-2'>
+      <div className='min-w-full mt-52 p-2'>
         <div className='flex flex-col items-center text-start justify-start gap-1 min-w-full rounded-lg'>
           <NavItem icon='support' selectedIcon='support' size='16' text='Support' />
           <NavItem icon='settings' size= '16' text = 'Settings' />
