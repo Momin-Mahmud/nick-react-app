@@ -1,7 +1,14 @@
 import React from "react";
 import Icon from "../../../utils/Icon";
 
-const Badge = ({ text, type, iconName = "arrow", iconSize = 16, textSize = 12 }) => {
+const Badge = ({
+  text,
+  type,
+  iconName = "arrow",
+  iconSize = 16,
+  textSize = 12,
+  fontWeight,
+}) => {
   // Function to map 'type' to specific colors
   const getBackgroundColor = () => {
     switch (type) {
@@ -15,6 +22,8 @@ const Badge = ({ text, type, iconName = "arrow", iconSize = 16, textSize = 12 })
         return "bg-[#2196F3]"; // Custom color for info
       case "error":
         return "bg-[#F44336]"; // Custom color for error
+      case "custom":
+        return "bg-[#FDF4FF]";
       default:
         return "bg-[#607D8B]"; // Default custom color (e.g., grey)
     }
@@ -32,6 +41,8 @@ const Badge = ({ text, type, iconName = "arrow", iconSize = 16, textSize = 12 })
         return "text-[#2196F3]"; // Custom color for info
       case "error":
         return "text-[#F44336]"; // Custom color for error
+      case "custom":
+        return "text-[#A21CAF]";
       default:
         return "text-[#607D8B]"; // Default custom color (e.g., grey)
     }
@@ -48,9 +59,30 @@ const Badge = ({ text, type, iconName = "arrow", iconSize = 16, textSize = 12 })
     return "text-3xl"; // Default to 3x extra-large if too large
   };
 
+  const getFontWeight = (fontWeight) => {
+    switch (fontWeight) {
+      case "light":
+        return "font-light";
+      case "normal":
+        return "font-normal";
+      case "medium":
+        return "font-medium";
+      case "semibold":
+        return "font-semibold";
+      case "bold":
+        return "font-bold";
+      case "extrabold":
+        return "font-extrabold";
+      default:
+        return "font-normal";
+    }
+  };
+
   return (
     <span
-      className={`inline-flex items-center px-3 py-1 rounded-full ${getBackgroundColor()} ${getTextColor()} ${getTextSizeClass(textSize)}`}
+      className={`inline-flex items-center px-3 py-1 rounded-full ${getBackgroundColor()} ${getTextColor()} ${getTextSizeClass(
+        textSize
+      )} ${getFontWeight(fontWeight)}`}
     >
       <Icon name={iconName} className="mr-2" size={iconSize} />
       {text}

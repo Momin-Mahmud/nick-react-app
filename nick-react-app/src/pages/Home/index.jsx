@@ -1,14 +1,15 @@
-import FAQ from "./FAQ";
-import Hero from "./Hero";
-import News from "./News";
-import Stats from "./Stats";
+import Hero from "../../components/shared/Hero/index";
+import Stats from "../../components/shared/Stats/index";
+import News from "../../components/shared/News/index";
+import Faq from "../../components/shared/FAQ/index";
+
 const Home = () => {
   return (
     <div className="">
       <Hero />
-      <Stats/>
+      <Stats />
       <News />
-      <FAQ/>
+      <Faq />
     </div>
   );
 };
