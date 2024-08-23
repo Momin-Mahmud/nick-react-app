@@ -8,7 +8,7 @@ const AppLayout = () => {
   const checkPages = () =>
     pathname !== "/login" &&
     pathname !== "/chat" &&
-    pathname !== "/prospecting";
+    pathname !== "/prospecting' && pathname !== '/company";
 
   return (
     <div className={`${checkPages() ? "min-h-screen" : "flex"}`}>

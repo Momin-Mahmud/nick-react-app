@@ -75,7 +75,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='h-screen overflow-y-auto w-[calc(100vw-85vw)] p-2 border-r flex flex-col gap-4 justify-start items-center'>
+    <div className='h-screen overflow-y-auto w-[calc(100vw-85vw)] bg-white p-2 border-r flex flex-col gap-4 justify-start items-center'>
       <div className='flex gap-4 items-center justify-between mt-3'>
         <div className='flex gap-2 items-center'>
           <Icon name={'logo'} size='26' />
@@ -160,7 +160,7 @@ const Sidebar = () => {
           <span className='tracking-tight text-[#737373] text-xs min-w-full font-medium'>
             Manage
           </span>
-          <NavItem icon='myCompany' selectedIcon='myCompany' size='16' text='My company' />
+          <NavItem navigationPath={'/company'} icon='myCompany' selectedIcon='myCompany' size='16' text='My company' />
           <NavItem icon = 'personas' size={16} text={'Personas'} />
           <NavItem icon= 'integrations' size='16' text={'Integrations'} />
         </div>

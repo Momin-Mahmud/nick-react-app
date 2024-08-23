@@ -5,6 +5,7 @@ import Login from "../../../pages/Login";
 import ChatHome from "../../../pages/ChatHome";
 import ProspectingCopilot from "../../../pages/ProspectingCopilot";
 import Pricing from "../../../pages/Pricing";
+import MyCompany from "../../../pages/MyCompany";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="prospecting" element={<ProspectingCopilot />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/company" element={<MyCompany />} />
         </Route>
       </Routes>
     </BrowserRouter>

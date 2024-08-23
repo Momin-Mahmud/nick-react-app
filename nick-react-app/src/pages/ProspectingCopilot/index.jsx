@@ -1,47 +1,74 @@
-import Icon from "../../utils/Icon"
+import Icon from '../../utils/Icon';
 
 const ProspectingCopilot = () => {
-
   const items = [
     {
-      label : 'Can you help me write a prospecting email?'
+      label: 'Can you help me write a prospecting email?'
     },
     {
-      label : 'Write a sequence to one of my accounts'
-    }, 
+      label: 'Write a sequence to one of my accounts'
+    },
     {
-      label : 'Craft a follow-up message for a prospect'
-    }, 
+      label: 'Craft a follow-up message for a prospect'
+    },
     {
-      label : 'Can you write me a custom LinkedIn message'
+      label: 'Can you write me a custom LinkedIn message'
     }
-  ]
+  ];
 
   return (
-    <div>
-       <div className='w-[85vw] h-screen flex-col items-center flex justify-center'>
-      <div className='flex flex-col items-center gap-1'>
+      <div className='flex-col flex w-[85vw] h-screen gap-24 items-center justify-end'>
+      <div className='flex-col items-center flex justify-center'>
+        <div className='flex flex-col items-center gap-1'>
+          <div>
+            <Icon name={'prospectingLogo'} size='70' className='mx-3' />
+          </div>
+          <div className='font-bold text-2xl'>Prospecting CoPilot</div>
+          <div>
+            Analyzes business scenarios and crafts tailored outreach messages
+          </div>
+        </div>
         <div>
-          <Icon name={'prospectingLogo'} size='70' className='mx-3' />
-        </div>
-        <div className='font-bold text-2xl'>Prospecting CoPilot</div>
-        <div>Analyzes business scenarios and crafts tailored outreach messages</div>
-      </div>
-      <div>
-        <div className='mt-4'>
-            <div className="flex items-center justify-center gap-5">
-            {items.map((item, index) => (
-              <div key={index} className='border-[1px] border-[#E9E9E9] rounded-md shadow-lg p-4 max-w-[12vw] text-start text-black h-[16vh] text-wrap flex items-center justify-center'>
-                <div className='flex items-center gap-2'>
-                  <div>{item.label}</div>
+          <div className='mt-4'>
+            <div className='flex items-center justify-center gap-5'>
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className='border-[1px] border-[#E9E9E9] rounded-md shadow-lg p-4 max-w-[12vw] text-start text-black h-[16vh] text-wrap flex items-center justify-center'
+                >
+                  <div className='flex items-center gap-2'>
+                    <div>{item.label}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-  )
-}
-export default ProspectingCopilot
+        <div className='w-[40vw] mt-32 mb-6'>
+          <div className='relative mt-2 rounded-md shadow-lg focus:ring-0 bg-white'>
+            <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
+              <span className='text-gray-500 sm:text-sm'><Icon name='attachments' size='16' /></span>
+            </div>
+            <input
+              type='text'
+              name='price'
+              id='price'
+              className='block w-full  rounded-md border-[1px]  border-[#E5E7EB] py-1.5 focus:outline-none bg-white pl-10 pr-20 placeholder:text-black  sm:text-sm sm:leading-6'
+              placeholder='...'
+            />
+            <div className='absolute inset-y-0 right-0 flex pr-2 mt-1 items-center'>
+              <Icon
+                name='upload'
+                size='20'
+                className=''/>
+            </div>
+          </div>
+          <div className='mt-4'>
+          CoPilots can make mistakes. Check important information
+          </div>
+        </div>
+      </div>
+  );
+};
+export default ProspectingCopilot;
