@@ -165,13 +165,13 @@ const Sidebar = () => {
           <NavItem icon= 'integrations' size='16' text={'Integrations'} />
         </div>
       </div>
-      <div className='min-w-full mt-52 p-2'>
+      <div className='min-w-full mt-64 p-2'>
         <div className='flex flex-col items-center text-start justify-start gap-1 min-w-full rounded-lg'>
           <NavItem icon='support' selectedIcon='support' size='16' text='Support' />
           <NavItem icon='settings' size= '16' text = 'Settings' />
         </div>
       </div>
-      <div className='min-w-full flex gap-2 py-1 rounded-md items-center justify-center bg-[#F3F4F6]'>
+      <div className='min-w-full flex gap-3 py-1 rounded-md items-center justify-center bg-[#F3F4F6]'>
           <img src={'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="logo" className='w-8 h-8 object-cover rounded-full'/>
           <div className='flex flex-col items-start'>
             <span className='text-[10px] font-bold'>
