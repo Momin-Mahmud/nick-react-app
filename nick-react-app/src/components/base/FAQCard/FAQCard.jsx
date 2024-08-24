@@ -3,7 +3,7 @@ import Icon from "../../../utils/Icon";
 
 const FAQCard = ({ icon, heading, body }) => {
   return (
-    <div className="w-[384px] h-[228px] py-5 rounded-tl-[6px] shadow-lg bg-white flex flex-col items-center justify-center">
+    <div className="w-[24vw] h-[24vh] rounded-tl-[6px] shadow-lg bg-white flex flex-col items-center justify-center">
       <Icon name={icon} size={24} className="mb-5" />
       <div className="text-xl font-semibold mb-3">
         {heading}

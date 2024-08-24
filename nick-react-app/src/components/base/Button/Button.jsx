@@ -11,6 +11,8 @@ const Button = ({ innerText = '', onClick, type = 'primary', size = 'medium', ic
         return 'bg-white hover:bg-[#fde0ff] text-[#C026D3] rounded-lg hover:shadow-lg';
       case 'primaryDark':
         return 'text-white bg-[#A21CAF] hover:bg-[#C026D3] hover:shadow-lg rounded-lg focus:outline-none dark:focus:ring-blue-800 text-center font-center';  
+      case 'outlined' : 
+        return 'text-[#6B7280] border border-[#E5E7EB] hover:shadow-lg rounded-lg focus:outline-none dark:focus:ring-blue-800 text-center font-center';
       default:
         return 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800';
     }

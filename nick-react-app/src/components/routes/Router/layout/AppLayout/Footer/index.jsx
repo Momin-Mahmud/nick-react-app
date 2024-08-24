@@ -2,7 +2,7 @@ import Icon from "../../../../../../utils/Icon";
 
 const Footer = () => {
   return (
-    <div className="px-24">
+    <div className="p-24">
       <hr className="mb-8"/>
       <div className="flex justify-between">
         <span>© 2024 Designership. All rights reserved.</span>

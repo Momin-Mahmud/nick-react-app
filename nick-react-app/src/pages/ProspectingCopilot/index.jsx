@@ -17,7 +17,7 @@ const ProspectingCopilot = () => {
   ];
 
   return (
-      <div className='flex-col flex w-[85vw] h-screen gap-24 items-center justify-end'>
+      <div className='flex-col flex w-[85vw] h-[95vh] gap-24 items-center justify-end'>
       <div className='flex-col items-center flex justify-center'>
         <div className='flex flex-col items-center gap-1'>
           <div>

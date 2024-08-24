@@ -5,12 +5,12 @@ import Faq from "../../components/shared/FAQ/index";
 
 const Home = () => {
   return (
-    <div className="">
+    <>
       <Hero />
       <Stats />
       <News />
       <Faq />
-    </div>
+    </>
   );
 };
 
