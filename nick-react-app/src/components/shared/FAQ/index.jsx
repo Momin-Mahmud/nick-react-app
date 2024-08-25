@@ -51,7 +51,7 @@ const Faq = () => {
         </div>
       </div>
 
-      <div className='flex flex-wrap gap-48 bg-[#FFFFF] items-center justify-center min-w-full py-20    '>
+      <div className='flex flex-wrap gap-32 bg-[#FFFFF] items-center justify-center min-w-full py-20    '>
         {data.map((item, index) => (
           <FAQCard
             key={index}
@@ -66,7 +66,7 @@ const Faq = () => {
         <div className='border-b-2 border-gray-300 min-w-[90%]'></div>
       </div>
 
-      <div className='px-28'>
+      <div className='px-20'>
         <div className='flex justify-between items-center bg-white p-8 rounded-md'>
           <div className='text-start'>
             <div className='text-2xl font-bold'>Still Have Questions?</div>
