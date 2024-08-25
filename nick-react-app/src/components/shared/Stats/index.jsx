@@ -29,7 +29,7 @@ const Stats = () => {
       <div className="text-4xl font-bold mb-8">
         A headline to make a big impact
       </div>
-      <span className="flex">
+      <span className="flex min-w-full justify-center">
         {stats.map((item, index) => (
           <span className={index == 1 ? "mx-28" : ""}>
             <StatsCards

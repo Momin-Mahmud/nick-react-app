@@ -4,7 +4,7 @@ import Icon from "../../../utils/Icon";
 const FAQCard = ({ icon, heading, body }) => {
   return (
     <div className="w-[24vw] rounded-tl-[6px] shadow-lg bg-white flex flex-col items-center justify-center">
-      <span className="py-4">
+      <span className="py-4 ">
         <svg
           width="48"
           height="48"
@@ -25,7 +25,7 @@ const FAQCard = ({ icon, heading, body }) => {
         </svg>
       </span>
       <div className="text-xl font-semibold mb-3">{heading}</div>
-      <p className="text-gray-600 text-center px-2">{body}</p>
+      <p className="text-gray-600 text-center px-2 pb-6">{body}</p>
     </div>
   );
 };
