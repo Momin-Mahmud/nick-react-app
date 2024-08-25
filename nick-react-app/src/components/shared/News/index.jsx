@@ -1,5 +1,9 @@
 import React from "react";
 import NewsCard from "../../../components/base/NewsCard/NewsCard";
+import News1 from '../../../assets/News/News1.png'
+import News2 from '../../../assets/News/News2.png'
+import News3 from '../../../assets/News/News3.png'
+
 
 const News = () => {
   return (
@@ -7,19 +11,19 @@ const News = () => {
       <NewsCard
         title="A catchy heading that brings some interest to visitors"
         description="Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean. Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."
-        imageSrc="https://via.placeholder.com/150"
+        imageSrc={News1}
         imageOnLeft={true}
       />
       <NewsCard
         title="A catchy heading that brings some interest to visitors"
         description="Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean. Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."
-        imageSrc="https://via.placeholder.com/150"
+        imageSrc={News2}
         imageOnLeft={false}
       />
       <NewsCard
         title="A catchy heading that brings some interest to visitors"
         description="Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean. Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."
-        imageSrc="https://via.placeholder.com/150"
+        imageSrc={News3}
         imageOnLeft={true}
       />
     </div>
