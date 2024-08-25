@@ -7,7 +7,7 @@ import News3 from '../../../assets/News/News3.png'
 
 const News = () => {
   return (
-    <div className="p-24">
+    <div className="p-24 flex flex-col gap-32">
       <NewsCard
         title="A catchy heading that brings some interest to visitors"
         description="Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean. Tortor interdum condimentum nunc molestie quam lectus euismod pulvinar risus. Cursus in odio aenean."
