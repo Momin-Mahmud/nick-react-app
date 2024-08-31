@@ -65,7 +65,7 @@ const Header = () => {
             type="secondary"
             innerText="Log in"
           />
-          <Button innerText="Sign up" />
+          <Button onClick={() => navigate("/signup")} innerText="Sign up" />
         </div>
       </nav>
     </header>

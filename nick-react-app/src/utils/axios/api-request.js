@@ -8,9 +8,9 @@ const apiRequest = async (method, url, options = {}) => {
       url,
       headers: {
         Authorization: `Bearer ${token}`,
-        ...options.headers, // Use options.headers directly here
+        ...options.headers,
       },
-      ...options, // Spread the rest of the options (including data)
+      ...options,
     });
     return { data: response.data, error: null };
   } catch (error) {

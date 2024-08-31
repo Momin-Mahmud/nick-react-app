@@ -6,6 +6,7 @@ import ChatHome from "../../../pages/ChatHome";
 import ProspectingCopilot from "../../../pages/ProspectingCopilot";
 import Pricing from "../../../pages/Pricing";
 import MyCompany from "../../../pages/MyCompany";
+import Signup from "../../../pages/Signup";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="prospecting" element={<ProspectingCopilot />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/company" element={<MyCompany />} />
+          <Route path='/signup' element={<Signup/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
