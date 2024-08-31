@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   return (
-<div className="flex min-h-full flex-col justify-center px-6 py-24 lg:px-8">
+<div className="flex min-h-full flex-col justify-center px-6 py-24 lg:px-8 h-[80vh]">
   <div className="sm:mx-auto flex items-center justify-center gap-2 sm:w-full sm:max-w-sm">
         <Icon size='40' name='logo' className='' />
       <span className='text-black tracking-tight text-2xl font-medium'>
@@ -40,7 +40,7 @@ const Login = () => {
         <button onClick={() => navigate('/chat')} type="submit" className="flex w-full justify-center rounded-md bg-[#8B5CF6] px-3 py-1.5 text-sm leading-6 hover:bg-[#C026D3]  text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log in</button>
       </div>
       <div>
-        <button type="submit" className="flex w-full justify-center rounded-md text-[#8B5CF6] px-3 text-sm leading-6 shadow-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign up</button>
+        <button onClick={() => navigate('/signup')} type="submit" className="flex w-full justify-center rounded-md text-[#8B5CF6] px-3 text-sm leading-6 shadow-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign up</button>
       </div>
     </div>
   </div>
