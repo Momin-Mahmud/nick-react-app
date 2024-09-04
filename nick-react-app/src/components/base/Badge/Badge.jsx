@@ -23,7 +23,7 @@ const Badge = ({
       case "error":
         return "bg-[#F44336]"; // Custom color for error
       case "custom":
-        return "bg-[#FDF4FF]";
+        return "bg-[#8B5CF6]";
       default:
         return "bg-[#607D8B]"; // Default custom color (e.g., grey)
     }
@@ -32,7 +32,7 @@ const Badge = ({
   const getTextColor = () => {
     switch (type) {
       case "primary":
-        return "text-[#6366F1]";
+        return "text-[#8B5CF6]";
       case "success":
         return "text-[#4CAF50]"; // Custom color for success
       case "warning":
@@ -42,7 +42,7 @@ const Badge = ({
       case "error":
         return "text-[#F44336]"; // Custom color for error
       case "custom":
-        return "text-[#A21CAF]";
+        return "text-[#8B5CF6]";
       default:
         return "text-[#607D8B]"; // Default custom color (e.g., grey)
     }
@@ -85,7 +85,7 @@ const Badge = ({
       )} ${getFontWeight(fontWeight)}`}
     >
       <Icon name={iconName} className="mr-2" size={iconSize} />
-      {text}
+      <span className="font-bold">{text}</span>
     </span>
   );
 };

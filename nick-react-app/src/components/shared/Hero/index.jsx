@@ -1,19 +1,21 @@
 import Button from "../../../components/base/Button/Button";
-import  Content  from "../../../assets/hero/image.png";
+import Content from "../../../assets/hero/Content.png";
 const Hero = () => {
   return (
-    <div className="flex items-center w-full justify-between px-24">
+    <div className="flex items-center w-full justify-center px-24">
       <div className="text-start max-w-[50%] grid gap-3.5">
-        <div className="text-[#710BA3] font-bold">
-          AI Co-pilots trained by the best sales leaders
+        <div className="text-[#710BA3] text-[16px]">It’s Finally Here...</div>
+        <div className="text-[#710BA3] text-[24px]">
+          1,000-person salesforce at the tap of a button.
         </div>
         <div className="font-extrabold text-6xl">
           10x Your Pipeline + Close Bigger Deals
         </div>
         <div className="text-[#374151]">
-          Craft tailored messages for executives. Ask key questions to identify
-          business challenges and create urgency for adopting your product or
-          service.
+          The world's first AI-powered sales copilot platform. Boost your
+          response rates with deep research on your prospects, relevant messages
+          at scale based on your value proposition, and follow-up message
+          built—all with just one click.
         </div>
         <div>
           <Button
@@ -25,7 +27,7 @@ const Hero = () => {
       </div>
 
       <>
-      <img src = {Content} height={400} width={500}/>
+        <img src={Content} height={400} width={500} />
       </>
     </div>
   );

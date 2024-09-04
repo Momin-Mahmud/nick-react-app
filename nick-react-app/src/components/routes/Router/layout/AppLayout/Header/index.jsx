@@ -9,26 +9,26 @@ const Header = () => {
       name: "Platform",
       path: "/chat",
     },
-    {
-      name: "Industries",
-      path: "/home",
-    },
+    // {
+    //   name: "Industries",
+    //   path: "/home",
+    // },
     {
       name: "Pricing",
       path: "/pricing",
     },
     {
-      name: "What’s a Co-Pilot?",
+      name: "About",
       path: "#",
     },
-    {
-      name: "Blog",
-      path: "#",
-    },
-    {
-      name: "Resources",
-      path: "#",
-    },
+    // {
+    //   name: "Blog",
+    //   path: "#",
+    // },
+    // {
+    //   name: "Resources",
+    //   path: "#",
+    // },
   ];
 
   return (

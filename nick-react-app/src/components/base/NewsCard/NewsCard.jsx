@@ -4,7 +4,7 @@ import avatar from '../../../assets/Avatar/Avatar.png';
 import Rating from '../Rating/Rating';
 import Button from '../Button/Button';
 
-const NewsCard = ({ title, description, imageSrc, imageOnLeft }) => {
+const NewsCard = ({ title, description, imageSrc, imageOnLeft,badgeText,badgeIcon }) => {
   return (
     <div
       className={`flex items-center justify-center gap-24 ${
@@ -14,9 +14,9 @@ const NewsCard = ({ title, description, imageSrc, imageOnLeft }) => {
       <div className='p-4 flex flex-col items-start w-1/3 text-left'>
         <span className='mb-6'>
           <Badge
-            text='Overline section title'
+            text={badgeText}
             type='primary'
-            iconName='thunderBolt'
+            iconName={badgeIcon}
           />
         </span>
         <span className='font-bold text-4xl mb-2'>{title}</span>
@@ -55,7 +55,7 @@ const NewsCard = ({ title, description, imageSrc, imageOnLeft }) => {
         </div>
 
         <div>
-          <Button type='outlined' innerText='Tertiary Action' />
+          <Button type='outlined' innerText='Learn More' />
         </div>
       </div>
       <img
