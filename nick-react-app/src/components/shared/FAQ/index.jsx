@@ -42,9 +42,9 @@ const Faq = () => {
     <div>
       <img
         src={Group1}
-        className="w-auto h-auto object-contain"
+        className="w-full h-auto object-contain"
         alt="Description of the image"
-        style={{ imageRendering: "crisp-edges" }}
+        style={{ imageRendering: "auto" }}
       />
 
       {/* <div
