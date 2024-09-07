@@ -3,6 +3,7 @@ import SearchInput from "../../../components/base/SearchInput/SearchInput";
 import FAQCard from "../../../components/base/FAQCard/FAQCard";
 import Button from "../../base/Button/Button";
 import Group1 from "../../../assets/hero/Group18.png";
+import Content from '../../../assets/hero/Content.svg'
 
 const Faq = () => {
   const data = [
@@ -41,7 +42,7 @@ const Faq = () => {
   return (
     <div>
       <img
-        src={Group1}
+        src={Content}
         className="w-full h-auto object-contain"
         alt="Description of the image"
         style={{ imageRendering: "auto" }}
