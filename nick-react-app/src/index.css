@@ -19,6 +19,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* CSS code */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Shift by 50% to cover the width of one set */
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%; /* Twice the width for two sets */
+  animation: marquee 5s linear infinite;
+}
+
+.marquee-inner {
+  display: flex;
+  width: 50%; /* Each set takes up 50% */
+}
+
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
