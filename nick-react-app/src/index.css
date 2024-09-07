@@ -33,7 +33,7 @@
 .animate-marquee {
   display: flex;
   width: 200%; /* Twice the width for two sets */
-  animation: marquee 5s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee-inner {
