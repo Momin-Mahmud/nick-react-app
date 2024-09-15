@@ -1,3 +1,4 @@
+import { HttpStatusCode } from "axios";
 import axiosInstance from "./axios-instance";
 
 const apiRequest = async (method, url, options = {}) => {
@@ -13,12 +14,14 @@ const apiRequest = async (method, url, options = {}) => {
       ...options,
       data: options.data || null,
     });
+    debugger;
     return { data: response.data, error: null, status: response.status };
   } catch (error) {
     return {
-      data: null,
-      error: error.response ? error.response.data : error.message,
-      status: error.response.status,
+      error: error.error.detail,
+      status: HttpStatusCode.BadRequest,
+      detail: error.error.detail,
+      // status: error.response.status_code,
     };
   }
 };

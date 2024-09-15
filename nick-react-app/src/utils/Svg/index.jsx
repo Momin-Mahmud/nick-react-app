@@ -14,8 +14,8 @@ export const StartedSvg = (
         fill="#A21CAF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M197.375 21.125L206.75 21.125C206.916 21.125 207.075 21.1908 207.192 21.3081C207.309 21.4253 207.375 21.5842 207.375 21.75V31.125C207.375 31.4702 207.095 31.75 206.75 31.75C206.405 31.75 206.125 31.4702 206.125 31.125V23.2589L194.692 34.6919C194.448 34.936 194.052 34.936 193.808 34.6919C193.564 34.4479 193.564 34.0521 193.808 33.8081L205.241 22.375L197.375 22.375C197.03 22.375 196.75 22.0952 196.75 21.75C196.75 21.4048 197.03 21.125 197.375 21.125Z"
         fill="#A21CAF"
       />
@@ -28,9 +28,9 @@ export const StartedSvg = (
         width="253"
         height="60"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -75,8 +75,8 @@ export const BuySvg = (
         fill="white"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M161.375 21.125L170.75 21.125C170.916 21.125 171.075 21.1908 171.192 21.3081C171.309 21.4253 171.375 21.5842 171.375 21.75V31.125C171.375 31.4702 171.095 31.75 170.75 31.75C170.405 31.75 170.125 31.4702 170.125 31.125V23.2589L158.692 34.6919C158.448 34.936 158.052 34.936 157.808 34.6919C157.564 34.4479 157.564 34.0521 157.808 33.8081L169.241 22.375L161.375 22.375C161.03 22.375 160.75 22.0952 160.75 21.75C160.75 21.4048 161.03 21.125 161.375 21.125Z"
         fill="white"
       />
@@ -89,9 +89,9 @@ export const BuySvg = (
         width="253"
         height="60"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

@@ -11,17 +11,25 @@ const Signup = () => {
     password: "",
   });
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     const userObj = {
       name: formData.name,
       email: formData.email,
       password: formData.password,
     };
-    const { data, error } = apiRequest("POST", "auth/sign_up", {
-      data: userObj,
-    });
-    console.log("Data: ", data);
-    console.log("Error: ", error);
+
+    try {
+      const { data, error } = await apiRequest("POST", "auth/sign_up", {
+        data: userObj,
+      });
+      if (error) {
+        console.error("Error: ", error);
+      } else {
+        console.log("Data: ", data);
+      }
+    } catch (err) {
+      console.error("Error in signup process:", err);
+    }
   };
 
   return (
