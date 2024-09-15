@@ -14,7 +14,6 @@ const apiRequest = async (method, url, options = {}) => {
       ...options,
       data: options.data || null,
     });
-    debugger;
     return { data: response.data, error: null, status: response.status };
   } catch (error) {
     return {

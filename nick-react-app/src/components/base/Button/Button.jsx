@@ -17,7 +17,7 @@ const Button = ({
       case "primary":
         return "text-white bg-[#C026D3] hover:border-[#73007b] hover:shadow-lg rounded-lg focus:outline-none dark:focus:ring-blue-800 text-center font-center";
       case "secondary":
-        return "bg-white hover:bg-[#fde0ff] text-[#C026D3] rounded-lg hover:shadow-lg";
+        return "bg-white hover:bg-[#fde0ff] border-[#E5E7EB] border-[1px] text-[#C026D3] rounded-lg";
       case "primaryDark":
         return "text-white bg-[#A21CAF] hover:bg-[#C026D3] hover:shadow-lg rounded-lg focus:outline-none dark:focus:ring-blue-800 text-center font-center";
       case "outlined":

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Button from "../../../components/base/Button/Button";
 import Content from "../../../assets/hero/Content.png";
 const Hero = () => {

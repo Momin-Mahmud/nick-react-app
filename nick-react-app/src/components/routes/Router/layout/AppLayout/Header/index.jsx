@@ -32,7 +32,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white border-b-2 border-gray-200">
+    <header className="bg-white border-b-2 border-gray-200 ">
       <nav
         className="flex items-center justify-between mx-4 px-16 py-2 lg:px-8"
         aria-label="Global"
