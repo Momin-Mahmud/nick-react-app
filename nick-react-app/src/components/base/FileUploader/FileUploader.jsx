@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Icon from '../../../utils/Icon';
 
-const FileUploader = () => {
+const FileUploader = ({label = 'Upload Sales Docs'}) => {
   const [fileName, setFileName] = useState('');
 
   const handleFileChange = (event) => {
@@ -16,13 +16,13 @@ const FileUploader = () => {
   };
 
   return (
-    <div className="w-[452px] h-auto p-5 bg-white border border-neutral-200 rounded-lg">
+    <div className="w-full h-auto p-5 bg-white border border-neutral-200 rounded-lg">
       {/* Content Container */}
       <div className="flex flex-col gap-6">
         {/* Title and Subtext */}
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full justify-start items-start">
           {/* Title */}
-          <div className="text-fuchsia-700 text-lg font-semibold">Upload Sales Docs</div>
+          <div className="text-fuchsia-700 text-lg font-semibold">{label}</div>
           {/* Subtext */}
           <div className="text-neutral-500 text-sm">PDF, Doc, pptx up to 1GB</div>
         </div>

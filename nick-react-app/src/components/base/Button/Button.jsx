@@ -6,6 +6,7 @@ const Button = ({
   type = "primary",
   size = "medium",
   icon,
+  disabled = false,
   iconLeading = false,
   iconSize,
   className,
@@ -44,6 +45,7 @@ const Button = ({
 
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       type="button"
       className={` flex items-center justify-center gap-2 ${variant()} ${sizeVariant()} ${className}`}

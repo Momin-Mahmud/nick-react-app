@@ -11,7 +11,7 @@ const Form7 = () => {
       <span className='mb-3 text-sm text-[#6B7280]'>Select all that apply</span>
       <div className='grid grid-cols-2 gap-2'>
         {jobTitles.map(jobTitle => (
-          <RadioButton label={jobTitle}/>
+          <RadioButton color='[#6B7280]' label={jobTitle}/>
         ))}
         <RadioButton label={'Other'} labelEditable={true}/>
       </div>

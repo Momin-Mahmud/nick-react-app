@@ -29,7 +29,7 @@ const RadioButton = ({ label, labelEditable }) => {
       onClick={() => !isEditing && setSelected(!selected)}
     >
       {/* Left Content (Radio Button Circle) */}
-      <div className="relative flex items-center justify-center w-5 h-5 border-2 rounded-full border-fuchsia-700">
+      <div className="relative flex items-center justify-center w-5 h-5 border-2 rounded-full border-[#D1D5DB]">
         {/* Outer Circle */}
         <input
           type="radio"

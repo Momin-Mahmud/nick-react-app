@@ -627,5 +627,18 @@ export const iconsList = {
         />
       </>
     )
+  },
+
+  rightArrow: {
+    viewBox: '0 0 17 14',
+    path: (
+      <path
+        d='M10.0556 1.55566L15.5 7.00011M15.5 7.00011L10.0556 12.4446M15.5 7.00011L1.5 7.00011'
+        stroke='#A21CAF'
+        stroke-width='1.5'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      />
+    )
   }
 };
