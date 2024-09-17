@@ -1,5 +1,8 @@
 import Icon from "../../utils/Icon";
+import React from "react";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import apiRequest from "../../utils/axios/api-request";
 
 const ProspectingCopilot = () => {
   const items = [
@@ -31,17 +34,46 @@ const ProspectingCopilot = () => {
     console.log(inputArray);
   }, [inputArray]);
 
+  useEffect(() => {
+    if (questionNumber == 3) {
+      console.log("Question 3 done!");
+      handleGptResponse();
+    }
+  }, [questionNumber]);
+
+  const createObjectFromQuestions = (questions, inputArray) => {
+    return questions.reduce((acc, question, index) => {
+      acc[question] = inputArray[index] || "";
+      return acc;
+    }, {});
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
 
-      // Save the current input value to the array
       if (inputValue.trim() !== "") {
         setInputArray([...inputArray, inputValue]); // Add the current input value to the array
         setInputValue(""); // Clear the input after saving
         setQuestionNumber(questionNumber + 1); // Increment the question number
       }
     }
+  };
+
+  const handleGptResponse = async () => {
+    const questionsObject = createObjectFromQuestions(questions, inputArray);
+    console.log("The object made is: ", questionsObject);
+
+    const { data, error } = await apiRequest("post", "/session/add_session", {
+      data: {
+        session: {
+          session_id: uuidv4(),
+          session_details: questionsObject,
+        },
+      },
+    });
+    console.log("Data: ", data);
+    console.log("Error: ", error);
   };
 
   return (

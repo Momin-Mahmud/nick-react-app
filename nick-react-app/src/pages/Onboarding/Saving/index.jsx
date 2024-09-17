@@ -16,13 +16,14 @@ const Saving = ({ formData }) => {
       user_id: localStorage.getItem("user_id") ?? "",
       name: formData.name,
       company_info: {
-        companyName: formData.companyName,
-        role: formData.role,
-        companySize: formData.companySize,
-        industryAreYouIn: formData.industryAreYouIn,
-        industryYouSellingTo: formData.industryYouSellingTo,
-        productsOrServicesSelling: formData.productsOrServicesSelling,
-        companyWebsite: formData.companyWebsite,
+        "What is the name of your business?": formData.companyName,
+        "What is your role?": formData.role,
+        "How many employees do you have?": formData.companySize,
+        "What Industry Are You In?": formData.industryAreYouIn,
+        "What Industries Are You Selling In To?": formData.industryYouSellingTo,
+        "What product or service are you selling?":
+          formData.productsOrServicesSelling,
+        "What is the website of your business?": formData.companyWebsite,
       },
     };
     console.log("Obj is: ", obj);
