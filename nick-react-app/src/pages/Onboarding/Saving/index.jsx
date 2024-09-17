@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Saving = ({ formData }) => {
   const navigate = useNavigate();
 
-  useEffect(async () => {
-    await saveCompanyInformation(formData);
+  useEffect(() => {
+    saveCompanyInformation(formData);
   }, []);
 
   const saveCompanyInformation = async (formData) => {
