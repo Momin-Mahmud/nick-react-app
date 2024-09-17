@@ -12,11 +12,10 @@ const AppLayout = () => {
     pathname !== "/signup" &&
     pathname !== "/login";
 
-  const renderSiderBar = () => {
+  const renderSiderBar = () => 
     pathname !== "/onboarding" &&
       pathname !== "/signup" &&
       pathname !== "/login";
-  };
 
   return (
     <div className={`${checkPages() ? "min-h-screen" : "flex"}`}>
