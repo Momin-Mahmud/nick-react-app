@@ -87,20 +87,6 @@ const Basics = ({ formData, setFormData }) => {
           ))}
         </select>
       </div>
-      {/* <div className="flex flex-col items-start justify-start w-full">
-        <label className="block mb-1 text-sm text-slate-800 font-semibold">
-          Your Company Size
-        </label>
-        <input
-          type="text"
-          className="w-full h-10 bg-white placeholder:text-xs placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 mb-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
-          placeholder={`Placeholder`}
-          value={formData.companySize}
-          onChange={(e) =>
-            setFormData({ ...formData, companySize: e.target.value })
-          }
-        />
-      </div> */}
     </div>
   );
 };
