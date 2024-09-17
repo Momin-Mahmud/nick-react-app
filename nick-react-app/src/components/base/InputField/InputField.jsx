@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Icon from '../../../utils/Icon';
 
-const InputField = () => {
+const InputField = ({setFormData, formData}) => {
   const [inputValue, setInputValue] = useState('');
 
   // Function to remove 'http://' or 'https://'
@@ -17,6 +17,7 @@ const InputField = () => {
   };
 
   const handleChange = (e) => {
+    setFormData({ ...formData, companyWebsite: e.target.value });
     // Update the input value as the user types
     setInputValue(e.target.value);
   };

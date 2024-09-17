@@ -1,5 +1,6 @@
 import FileUploader from "../../../components/base/FileUploader/FileUploader";
 import React from "react";
+import InputField from "../../../components/base/InputField/InputField";
 
 const OneLastThing = ({ formData, setFormData }) => {
   return (
@@ -16,32 +17,13 @@ const OneLastThing = ({ formData, setFormData }) => {
         out what you sell and do, making your results 100x better. So take your
         time here, it is worth it, we promise!
       </label>
-      <div className="mb-3">
-        <div className="flex items-center justify-between mt-4">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium leading-6 text-gray-900"
-          >
-            Yours Company's Website
-          </label>
-        </div>
-        <input
-          placeholder="Insert a link here"
-          id="website-link"
-          name="website-link"
-          type="url"
-          autoComplete="email"
-          required
-          className="block w-full text-sm rounded-md border-[1px] border-[#E5E7EB] py-1.5 px-2 shadow-sm  placeholder:text-gray-400 focus:outline-none bg-white"
-          value={formData.companyWebsite}
-          onChange={(e) =>
-            setFormData({ ...formData, companyWebsite: e.target.value })
-          }
-        />
-        <span className="text-xs text-[#6B7280] flex items-center justify-between mt-1">
-          Leave blank if you don’t have one
-        </span>
-      </div>
+      <div className='text-left mt-4 flex-grow flex-col flex justify-center'>
+      <label className='block mb-2 text-sm text-slate-800 font-semibold'>
+        Your Company's Website
+      </label>
+      <InputField formData={formData} setFormData={setFormData} />
+      <span className='text-sm text-[#6B7280] mt-2'>Leave blank if you don’t have one</span>
+    </div>
       <FileUploader label="Upload Any Relevant Docs or Presentations" />
       <span className="text-sm text-[#6B7280] text-left">
         Upload your sales decks, white papers, case studies, or any relevant
