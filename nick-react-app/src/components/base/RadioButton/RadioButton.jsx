@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const RadioButton = ({ label, labelEditable }) => {
   const [selected, setSelected] = useState(false);
@@ -38,14 +38,16 @@ const RadioButton = ({ label, labelEditable }) => {
           className="appearance-none absolute w-full h-full cursor-pointer"
         />
         {/* Inner Circle (visible when selected) */}
-        {selected && <div className="absolute inset-0 m-auto w-[50%] h-[50%] bg-fuchsia-700 rounded-full"></div>}
+        {selected && (
+          <div className="absolute inset-0 m-auto w-[50%] h-[50%] bg-fuchsia-700 rounded-full"></div>
+        )}
       </div>
 
       {/* Label/Placeholder */}
       {isEditing ? (
         <input
           className="text-sm font-medium text-neutral-700 border-none bg-transparent focus:outline-none caret-fuchsia-700"
-          value={editableLabel ?? ''}
+          value={editableLabel ?? ""}
           onChange={handleLabelChange}
           onBlur={handleLabelBlur}
           onClick={(e) => e.stopPropagation()} // Prevent the input from toggling the radio button

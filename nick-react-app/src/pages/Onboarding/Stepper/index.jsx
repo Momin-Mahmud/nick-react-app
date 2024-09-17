@@ -1,27 +1,42 @@
-import Basics from './Basics';
-import { useState } from 'react';
-import Icon from '../../../utils/Icon';
-import Prospects from '../Prospects';
-import AlmostDone from '../AlmostDone';
-import OneLastThing from '../OneLastThing';
-import Saving from '../Saving';
+import Basics from "./Basics";
+import { useState } from "react";
+import Icon from "../../../utils/Icon";
+import Prospects from "../Prospects";
+import AlmostDone from "../AlmostDone";
+import OneLastThing from "../OneLastThing";
+import Saving from "../Saving";
 
 const Stepper = () => {
   const [activeStep, setActiveStep] = useState(0);
   const steps = [
     {
-      component: <Basics />
+      component: <Basics />,
     },
     {
-      component: <Prospects />
-    }, {
-      component: <AlmostDone/>
-    }, {
-      component : <OneLastThing/>
+      component: (
+        <Prospects
+          title="A Little More About You..."
+          question="What Industry Are You In?"
+        />
+      ),
     },
     {
-      component: <Saving/>
-    }
+      component: (
+        <Prospects
+          title="Now, About Your Prospects..."
+          question="What Industries Are You Selling In To?"
+        />
+      ),
+    },
+    {
+      component: <AlmostDone />,
+    },
+    {
+      component: <OneLastThing />,
+    },
+    {
+      component: <Saving />,
+    },
   ];
   console.log(steps[activeStep]);
   const handleNext = () => {
@@ -29,18 +44,25 @@ const Stepper = () => {
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col">
       {steps[activeStep].component}
-      <div className='w-full'>
-        <progress className='progress-bar w-full' value={activeStep} max={steps.length - 1}></progress>
+      <div className="w-full">
+        <progress
+          className="progress-bar w-full"
+          value={activeStep}
+          max={steps.length - 1}
+        ></progress>
       </div>
-      <div className='flex justify-between mt-4 cursor-pointer'>
+      <div className="flex justify-between mt-4 cursor-pointer">
         <div></div>
         {activeStep !== steps.length - 1 && (
-        <span onClick={handleNext} className='text-[#710BA3] flex gap-2 items-center'>
-          <span>Next</span>
-          <Icon name='rightArrow' size='18' />
-        </span>
+          <span
+            onClick={handleNext}
+            className="text-[#710BA3] flex gap-2 items-center"
+          >
+            <span>Next</span>
+            <Icon name="rightArrow" size="18" />
+          </span>
         )}
       </div>
     </div>
