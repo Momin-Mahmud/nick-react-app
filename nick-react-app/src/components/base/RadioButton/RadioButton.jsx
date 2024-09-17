@@ -24,7 +24,7 @@ const RadioButton = ({ label, labelEditable, selected, onChange }) => {
 
   return (
     <div
-      className="relative flex items-center gap-3 w-[251px] h-[40px] p-3 bg-white border border-neutral-200 shadow-sm rounded-lg cursor-pointer"
+      className="relative flex items-center gap-3 w-[265px] h-[40px] p-3 bg-white border border-neutral-200 shadow-sm rounded-lg cursor-pointer"
       onClick={() => !isEditing && onChange(editableLabel)}
     >
       {/* Left Content (Radio Button Circle) */}
