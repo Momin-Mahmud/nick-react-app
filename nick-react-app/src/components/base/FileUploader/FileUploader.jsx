@@ -1,18 +1,41 @@
-import { useState } from 'react';
-import Icon from '../../../utils/Icon';
+import { useState } from "react";
+import Icon from "../../../utils/Icon";
 
-const FileUploader = ({label = 'Upload Sales Docs'}) => {
-  const [fileName, setFileName] = useState('');
+const FileUploader = ({ label = "Upload Sales Docs" }) => {
+  const [files, setFiles] = useState([]);
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setFileName(file.name);
+    const selectedFiles = Array.from(event.target.files);
+    const allowedExtensions = [
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    ];
+
+    // Filter files based on allowed types
+    const validFiles = selectedFiles.filter((file) =>
+      allowedExtensions.includes(file.type)
+    );
+    const invalidFiles = selectedFiles.filter(
+      (file) => !allowedExtensions.includes(file.type)
+    );
+
+    if (invalidFiles.length > 0) {
+      alert(
+        "Some files have invalid types. Please upload only PDF, DOC, or PPTX files."
+      );
+    }
+
+    if (validFiles.length > 0) {
+      setFiles((prevFiles) => [...prevFiles, ...validFiles]);
     }
   };
 
-  const handleRemoveFile = () => {
-    setFileName('');
+  const handleRemoveFile = (indexToRemove) => {
+    setFiles((prevFiles) =>
+      prevFiles.filter((_, index) => index !== indexToRemove)
+    );
   };
 
   return (
@@ -24,32 +47,40 @@ const FileUploader = ({label = 'Upload Sales Docs'}) => {
           {/* Title */}
           <div className="text-fuchsia-700 text-lg font-semibold">{label}</div>
           {/* Subtext */}
-          <div className="text-neutral-500 text-sm">PDF, Doc, pptx up to 1GB</div>
+          <div className="text-neutral-500 text-sm">
+            PDF, DOC, PPTX up to 1GB each
+          </div>
         </div>
 
         {/* Uploaded File Information */}
-        {fileName && (
-          <div className="flex items-center justify-between text-neutral-600 text-sm bg-neutral-50 p-2 rounded-lg border border-neutral-300">
-            <span><strong>Uploaded File:</strong> {fileName}</span>
-            <button
-              className="ml-2 text-neutral-500 hover:text-[#C026D3] focus:outline-none"
-              onClick={handleRemoveFile}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+        {files.length > 0 && (
+          <div className="flex flex-col gap-2 text-neutral-600 text-sm bg-neutral-50 p-2 rounded-lg border border-neutral-300">
+            {files.map((file, index) => (
+              <div key={index} className="flex items-center justify-between">
+                <span>
+                  <strong>Uploaded File:</strong> {file.name}
+                </span>
+                <button
+                  className="ml-2 text-neutral-500 hover:text-[#C026D3] focus:outline-none"
+                  onClick={() => handleRemoveFile(index)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ))}
           </div>
         )}
 
@@ -61,7 +92,7 @@ const FileUploader = ({label = 'Upload Sales Docs'}) => {
           >
             {/* Icon (Left) */}
             <div className="w-5 h-5">
-              <Icon name='uploadFile' size='15' />
+              <Icon name="uploadFile" size="15" />
             </div>
             {/* Label */}
             <span className="text-sm font-medium">Browse Files</span>
@@ -69,6 +100,8 @@ const FileUploader = ({label = 'Upload Sales Docs'}) => {
           <input
             id="file-upload"
             type="file"
+            accept=".pdf,.doc,.docx,.ppt,.pptx"
+            multiple
             className="hidden"
             onChange={handleFileChange}
           />
