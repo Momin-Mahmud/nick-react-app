@@ -1,5 +1,5 @@
 import Icon from "../../utils/Icon";
-import React from "react";
+import Button from "../../components/base/Button/Button";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import apiRequest from "../../utils/axios/api-request";
@@ -85,7 +85,17 @@ const ProspectingCopilot = () => {
 
   return (
     <div className="overflow-scroll max-h-[100vh]">
-      <div className="flex-col flex w-[85vw] pt-48 gap-8 items-center overflow-scroll justify-end">
+      <div className="w-full">
+      <div className='flex items-center justify-end gap-2 p-5'>
+      <div className='flex gap-1'>
+        <Icon size='30' name='credits'/>
+        <span className='font-bold text-lg'>250/250</span>
+      </div>
+       <span className='text-xs text-[#999999]'>Credits reset in 30 days</span>
+       <Button icon='currency' iconSize={16} size='small' innerText='Get More Credits' />
+      </div>
+      </div>
+      <div className="flex-col flex w-[85vw] min-h-[100vh] py-16 gap-8 items-center overflow-scroll justify-end">
         <div className="flex-col items-center flex justify-center">
           <div className="flex flex-col items-center gap-1 mb-4">
             <div>
@@ -165,7 +175,7 @@ const ProspectingCopilot = () => {
               style={{
                 boxShadow: "rgba(0, 0, 0, 0.15) 0px -50px 20px -40px inset",
               }}
-              className="p-4 text-sm text-left mt-4 flex flex-col justify-start items-start gap-2 border-[1px] rounded-xl border-[#E9E9E9]"
+              className="p-4 text-sm text-left mt-4 flex flex-col justify-start overflow-y-auto max-h-[30vh] items-start gap-2 border-[1px] rounded-xl border-[#E9E9E9]"
             >
               <div className="font-semibold text-[#4B5563]">Submitted</div>
               <div className="flex flex-col gap-4 text-xs mt-2">
