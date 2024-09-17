@@ -26,7 +26,11 @@ const Login = () => {
       console.log("Data: ", data);
       localStorage.setItem("user_id", data?.data?.user_id);
       localStorage.setItem("token", data?.data?.token);
-      navigate("/onboarding");
+      if (data?.data?.company_info) {
+        navigate("/chat");
+      } else {
+        navigate("/onboarding");
+      }
     } else {
       console.log("Error: ", error);
     }
