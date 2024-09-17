@@ -15,9 +15,7 @@ const Basics = ({ formData, setFormData }) => {
           className="w-full h-10 bg-white placeholder:text-xs placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 mb-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
           placeholder={`Full Name Here`}
           value={formData.fullName}
-          onChange={(e) =>
-            setFormData({ ...formData, fullName: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
       </div>
       <div className="flex flex-col items-start justify-start">

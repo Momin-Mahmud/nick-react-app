@@ -9,7 +9,7 @@ import Saving from "../Saving";
 const Stepper = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     companyName: "",
     role: "",
     companySize: "",
@@ -49,7 +49,7 @@ const Stepper = () => {
       component: <OneLastThing formData={formData} setFormData={setFormData} />,
     },
     {
-      component: <Saving />,
+      component: <Saving formData={formData} />,
     },
   ];
 

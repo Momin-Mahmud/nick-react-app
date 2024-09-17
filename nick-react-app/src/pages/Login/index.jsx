@@ -25,6 +25,7 @@ const Login = () => {
     if (!error) {
       console.log("Data: ", data);
       localStorage.setItem("user_id", data?.data?.user_id);
+      localStorage.setItem("token", data?.data?.token);
       navigate("/onboarding");
     } else {
       console.log("Error: ", error);
