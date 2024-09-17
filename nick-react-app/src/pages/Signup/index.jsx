@@ -33,8 +33,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-full justify-center items-center h-[80vh]">
-      <div className="bg-[#F3F4F6] flex items-center justify-center h-[80vh]">
+    <div className="flex min-h-full justify-center items-center h-[100vh] overflow-hidden">
+      <div className="bg-[#F3F4F6] flex items-center justify-center h-[100vh]">
         <div className="flex flex-col bg-[#F3F4F6] items-center justify-center w-[50vw] px-24 mt-[32vh] mx-auto">
           <div className="text-black text-5xl text-left font-bold">
             Create Relevant Messages to Your Propects in Seconds
@@ -48,7 +48,7 @@ const Login = () => {
         </div>
       </div>
       <div className="w-[50vw] mx-auto">
-        <div className="flex h-[80vh] w-[50vw] flex-col justify-center items-center">
+        <div className="flex h-[100vh] w-[50vw] flex-col justify-center items-center">
           <div className="flex items-start justify-start gap-2 w-[30vw]">
             <Icon size="50" name="logo" className="" />
             <span className="text-black tracking-tight text-4xl font-medium">
@@ -155,7 +155,7 @@ const Login = () => {
         </div>
       </div>
       <div className="absolute left-0 z-0 mt-20 bottom-0">
-        <img src={Visuals} />
+        <img width={600} src={Visuals} />
       </div>
     </div>
   );

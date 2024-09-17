@@ -60,7 +60,7 @@ const Stepper = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col py-24">
       {steps[activeStep].component}
       <div className="w-full">
         <progress

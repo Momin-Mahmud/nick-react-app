@@ -1,6 +1,5 @@
 import Icon from '../../../../../../utils/Icon';
 import { useState } from 'react';
-import Button from '../../../../../base/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import NavItem from './NavItem';
 
@@ -165,7 +164,7 @@ const Sidebar = () => {
           <NavItem icon= 'integrations' size='16' text={'Integrations'} />
         </div>
       </div>
-      <div className='min-w-full mt-64 p-2'>
+      <div className='min-w-full mt-56 p-2'>
         <div className='flex flex-col items-center text-start justify-start gap-1 min-w-full rounded-lg'>
           <NavItem icon='support' selectedIcon='support' size='16' text='Support' />
           <NavItem icon='settings' size= '16' text = 'Settings' />
