@@ -23,7 +23,7 @@ const Badge = ({
       case "error":
         return "bg-[#F44336]"; // Custom color for error
       case "custom":
-        return "bg-[#8B5CF6]";
+        return "bg-[#FDF4FF]";
       default:
         return "bg-[#607D8B]"; // Default custom color (e.g., grey)
     }
@@ -85,7 +85,7 @@ const Badge = ({
       )} ${getFontWeight(fontWeight)}`}
     >
       <Icon name={iconName} className="mr-2" size={iconSize} />
-      <span className="font-bold">{text}</span>
+      <span className="font-bold text-[#c026d3]">{text}</span>
     </span>
   );
 };

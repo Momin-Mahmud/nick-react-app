@@ -20,6 +20,7 @@ const ProspectingCopilot = () => {
     },
   ];
 
+
   const questions = [
     "Which job title are you reaching out to?",
     "Which company are you reaching out to?",
@@ -132,6 +133,22 @@ const ProspectingCopilot = () => {
         <div className="mt-4">
           CoPilots can make mistakes. Check important information
         </div>
+        {inputArray.length > 0 && (
+        <div style={{ boxShadow: 'rgba(0, 0, 0, 0.15) 0px -50px 20px -40px inset'}} className='p-4 text-sm text-left mt-4 flex flex-col justify-start items-start gap-2 border-[1px] rounded-xl border-[#E9E9E9]'>
+            <div className='font-semibold text-[#4B5563]'>Submitted</div>
+            <div className='flex flex-col gap-4 text-xs mt-2'>
+              {inputArray.map((item, index) => (
+                  <div key={item.id} className='flex items-center gap-2'>
+                  <Icon name={'tickWhite'} size='12' className='p-0.5 rounded-full bg-[#6D28D9]' /> 
+                  <div className="flex flex-col gap-1">
+                  <div className="font-bold">{questions[index]}</div>
+                  <div >{item}</div>
+                  </div>
+                  </div>
+              ))}
+            </div>
+          </div>
+  )     }
       </div>
     </div>
   );

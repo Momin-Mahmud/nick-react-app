@@ -24,7 +24,7 @@ const PricingCardsList = () => {
     {
       title: "Basic",
       isBadge: true,
-      badgeIcon: "flame",
+      badgeIcon: "fire",
       badgeText: "Best Value",
       price: "37",
       tokens: "5k",
