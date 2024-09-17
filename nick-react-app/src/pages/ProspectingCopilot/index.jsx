@@ -87,13 +87,8 @@ const ProspectingCopilot = () => {
   };
 
   return (
-    <>
-      {loading ? (
-        <div className='min-w-[85vw] h-full flex items-center justify-center'>
-          <Spinner />
-        </div>
-      ) : (
-        <div className='overflow-scroll max-h-[100vh]'>
+    <div className='relative bg-white'>
+      {loading && <Spinner width='85vw' />}
           <div className='w-full'>
             <div className='flex items-center justify-end gap-2 p-5'>
               <div className='flex gap-1'>
@@ -104,7 +99,7 @@ const ProspectingCopilot = () => {
               <Button icon='currency' iconSize={16} size='small' innerText='Get More Credits' />
             </div>
           </div>
-          <div className='flex-col flex w-[85vw] min-h-[100vh] py-16 gap-8 items-center overflow-scroll justify-end'>
+          <div className='flex-col flex w-[85vw] min-h-[100vh] pt-16 gap-8 items-center overflow-scroll justify-end'>
             <div className='flex-col items-center flex justify-center'>
               <div className='flex flex-col items-center gap-1 mb-4'>
                 <div>
@@ -199,8 +194,6 @@ const ProspectingCopilot = () => {
             </div>
           </div>
         </div>
-      )}
-    </>
   );
 };
 export default ProspectingCopilot;

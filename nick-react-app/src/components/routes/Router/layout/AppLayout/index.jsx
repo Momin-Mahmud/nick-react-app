@@ -20,9 +20,7 @@ const AppLayout = () => {
   return (
     <div className={`${checkPages() ? "min-h-screen" : "flex"}`}>
       {checkPages() ? <Header /> : renderSiderBar() && <Sidebar />}
-      <div>
         <Outlet />
-      </div>
     </div>
   );
 };
