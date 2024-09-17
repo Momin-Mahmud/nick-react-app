@@ -23,11 +23,12 @@ const Login = () => {
       data: userObj,
     });
     if (!error) {
-      navigate("/chat");
+      console.log("Data: ", data);
+      localStorage.setItem("user_id", data?.data?.user_id);
+      navigate("/onboarding");
     } else {
       console.log("Error: ", error);
     }
-    console.log("Data: ", data);
     // if (!error) {
     // } else {
     // }

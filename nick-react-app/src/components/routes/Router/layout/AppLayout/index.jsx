@@ -12,9 +12,15 @@ const AppLayout = () => {
     pathname !== "/signup" &&
     pathname !== "/login";
 
+  const Sidebar = () => {
+    pathname !== "/onboarding" &&
+      pathname !== "/signup" &&
+      pathname !== "/login";
+  };
+
   return (
     <div className={`${checkPages() ? "min-h-screen" : "flex"}`}>
-      {checkPages() ? <Header /> : <Sidebar />}
+      {checkPages() ? <Header /> : Sidebar && <Sidebar />}
       <div>
         <Outlet />
       </div>
