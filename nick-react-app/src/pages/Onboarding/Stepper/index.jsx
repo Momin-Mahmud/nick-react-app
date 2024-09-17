@@ -8,15 +8,27 @@ import Saving from "../Saving";
 
 const Stepper = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    role: "",
+    companySize: "",
+    industryAreYouIn: [],
+    industryYouSellingTo: [],
+    productsOrServicesSelling: "",
+    companyWebsite: "",
+  });
   const steps = [
     {
-      component: <Basics />,
+      component: <Basics formData={formData} setFormData={setFormData} />,
     },
     {
       component: (
         <Prospects
           title="A Little More About You..."
           question="What Industry Are You In?"
+          formData={formData}
+          setFormData={setFormData}
         />
       ),
     },
@@ -25,21 +37,25 @@ const Stepper = () => {
         <Prospects
           title="Now, About Your Prospects..."
           question="What Industries Are You Selling In To?"
+          formData={formData}
+          setFormData={setFormData}
         />
       ),
     },
     {
-      component: <AlmostDone />,
+      component: <AlmostDone formData={formData} setFormData={setFormData} />,
     },
     {
-      component: <OneLastThing />,
+      component: <OneLastThing formData={formData} setFormData={setFormData} />,
     },
     {
       component: <Saving />,
     },
   ];
-  console.log(steps[activeStep]);
+
   const handleNext = () => {
+    // Log the data when advancing to the next step
+    console.log("Current Form Data: ", formData);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 

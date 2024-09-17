@@ -1,20 +1,20 @@
-import Button from '../../components/base/Button/Button';
-import { useState } from 'react';
-import Form1 from './Forms/form1';
-import Form2 from './Forms/form2';
-import Form3 from './Forms/form3';
-import Form4 from './Forms/form4';
-import Form5 from './Forms/form5';
-import Form6 from './Forms/form6';
-import Form7 from './Forms/form7';
-import Form8 from './Forms/form8';
-import Form9 from './Forms/form9';
+import Button from "../../components/base/Button/Button";
+import { useState } from "react";
+import Form1 from "./Forms/form1";
+import Form2 from "./Forms/form2";
+import Form3 from "./Forms/form3";
+import Form4 from "./Forms/form4";
+import Form5 from "./Forms/form5";
+import Form6 from "./Forms/form6";
+import Form7 from "./Forms/form7";
+import Form8 from "./Forms/form8";
+import Form9 from "./Forms/form9";
 
 const MyCompany = () => {
   const [showDropDown, setShowDropDown] = useState(false);
-  const [pageNo, setPageNo] = useState(1)
-  const totalFormsCount = 9
-  
+  const [pageNo, setPageNo] = useState(1);
+  const totalFormsCount = 9;
+
   const renderSelectedPage = () => {
     switch (pageNo) {
       case 1:
@@ -24,49 +24,52 @@ const MyCompany = () => {
       case 3:
         return <Form3 />;
       case 4:
-        return <Form4 />
+        return <Form4 />;
       case 5:
-        return <Form5 />
+        return <Form5 />;
       case 6:
-        return <Form6 />
+        return <Form6 />;
       case 7:
-        return <Form7 />
+        return <Form7 />;
       case 8:
-        return <Form8 />
+        return <Form8 />;
       case 9:
-        return <Form9 />
+        return <Form9 />;
     }
-  }
+  };
 
   const nextPage = () => {
     if (pageNo < totalFormsCount) {
-      setPageNo(prevPageNo => prevPageNo + 1)
+      setPageNo((prevPageNo) => prevPageNo + 1);
     }
-  }
+  };
 
   const prevPage = () => {
     if (pageNo > 1) {
-      setPageNo(prevPageNo => prevPageNo - 1)
+      setPageNo((prevPageNo) => prevPageNo - 1);
     }
-  }
+  };
 
   return (
-    <div className='w-[85vw] h-screen'>
-      <div className='p-24 items-start flex flex-col w-[90%] '>
-        <div className='flex items-center justify-between w-full'>
-          <div className='text-xl font-bold'>My Company</div>
+    <div className="w-[85vw] h-screen">
+      <div className="p-24 items-start flex flex-col w-[90%] ">
+        <div className="flex items-center justify-between w-full">
+          <div className="text-xl font-bold">My Company</div>
           <div>
-            <Button innerText='Save' />
+            <Button innerText="Save" />
           </div>
         </div>
-        <div className='p-8 bg-white w-full rounded-md mt-4 flex flex-col gap-3 justify-center justify-between items-center min-h-[75vh]'>
+        <div className="p-8 bg-white w-full rounded-md mt-4 flex flex-col gap-3 justify-center justify-between items-center min-h-[75vh]">
           {
-            <div className='flex-grow flex justify-center'>
+            <div className="flex-grow flex justify-center">
               {renderSelectedPage()}
             </div>
           }
           <div>
-              <span className='font-poppins font-semibold text-sm text-[#999999]'>{pageNo}</span><span className='text-[#999999] text-sm'>/{totalFormsCount}</span>
+            <span className="font-poppins font-semibold text-sm text-[#999999]">
+              {pageNo}
+            </span>
+            <span className="text-[#999999] text-sm">/{totalFormsCount}</span>
           </div>
           {/* <div className='w-full max-w-sm min-w-[20vw] text-left mt-4'>
             <label className='block mb-1 text-sm text-slate-800 font-semibold'>
@@ -100,9 +103,9 @@ const MyCompany = () => {
               >
                 <path
                   stroke='currentColor'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  stroke-width='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
                   d='m1 1 4 4 4-4'
                 />
               </svg>
@@ -149,12 +152,29 @@ const MyCompany = () => {
             </span>
           </label> */}
         </div>
-        <div className='flex items-center justify-between w-full'>
+        <div className="flex items-center justify-between w-full">
           <div>
-            {pageNo > 1 && <Button innerText='Previous' type='secondary-no-bg' icon={'previous'} iconSize={15} onClick={prevPage}/>}
+            {pageNo > 1 && (
+              <Button
+                innerText="Previous"
+                type="secondary-no-bg"
+                icon={"previous"}
+                iconSize={15}
+                onClick={prevPage}
+              />
+            )}
           </div>
           <div>
-            {pageNo < totalFormsCount && <Button innerText='Next' type='secondary-no-bg' icon={'next'} iconLeading iconSize={15} onClick={nextPage}/>}
+            {pageNo < totalFormsCount && (
+              <Button
+                innerText="Next"
+                type="secondary-no-bg"
+                icon={"next"}
+                iconLeading
+                iconSize={15}
+                onClick={nextPage}
+              />
+            )}
           </div>
         </div>
       </div>

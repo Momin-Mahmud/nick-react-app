@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const RadioButton = ({ label, labelEditable }) => {
-  const [selected, setSelected] = useState(false);
+const RadioButton = ({ label, labelEditable, selected, onChange }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editableLabel, setEditableLabel] = useState(label);
 
@@ -26,7 +25,7 @@ const RadioButton = ({ label, labelEditable }) => {
   return (
     <div
       className="relative flex items-center gap-3 w-[251px] h-[40px] p-3 bg-white border border-neutral-200 shadow-sm rounded-lg cursor-pointer"
-      onClick={() => !isEditing && setSelected(!selected)}
+      onClick={() => !isEditing && onChange(editableLabel)}
     >
       {/* Left Content (Radio Button Circle) */}
       <div className="relative flex items-center justify-center w-5 h-5 border-2 rounded-full border-[#D1D5DB]">
@@ -34,7 +33,7 @@ const RadioButton = ({ label, labelEditable }) => {
         <input
           type="radio"
           checked={selected}
-          onChange={() => setSelected(!selected)}
+          onChange={() => onChange(editableLabel)}
           className="appearance-none absolute w-full h-full cursor-pointer"
         />
         {/* Inner Circle (visible when selected) */}
