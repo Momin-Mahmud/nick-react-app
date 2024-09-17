@@ -9,12 +9,14 @@ import Visuals from "../../assets/hero/Visuals.png";
 import Button from "../../components/base/Button/Button";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Spinner from "../../components/base/Spinner";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
   });
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSignup = async () => {
     const userObj = {
@@ -22,9 +24,11 @@ const Login = () => {
     };
 
     try {
+      setLoading(true);
       const { data, error } = await apiRequest("POST", "auth/sign_up", {
         data: userObj,
       });
+      setLoading(false);
       if (error) {
         toast.error("Error signing up.");
         console.error("Error: ", error);
@@ -40,6 +44,7 @@ const Login = () => {
 
   return (
     <>
+      {loading && <Spinner />}
       <div className="flex min-h-full justify-center items-center h-[100vh] overflow-hidden">
         <div className="bg-[#F3F4F6] flex items-center justify-center h-[100vh]">
           <div className="flex flex-col bg-[#F3F4F6] items-center justify-center w-[50vw] px-24 mt-[32vh] mx-auto">
