@@ -55,9 +55,9 @@ const ProspectingCopilot = () => {
       e.preventDefault();
 
       if (inputValue.trim() !== "") {
-        setInputArray([...inputArray, inputValue]); // Add the current input value to the array
-        setInputValue(""); // Clear the input after saving
-        setQuestionNumber(questionNumber + 1); // Increment the question number
+        setInputArray([...inputArray, inputValue]);
+        setInputValue("");
+        setQuestionNumber(questionNumber + 1);
       }
     }
   };
@@ -96,7 +96,7 @@ const ProspectingCopilot = () => {
               Analyzes business scenarios and crafts tailored outreach messages
             </div>
           </div>
-          {showEmail && (
+          {showEmail ? (
             <div
               style={{
                 boxShadow: "rgba(0, 0, 0, 0.15) 0px -50px 20px -40px inset",
@@ -104,37 +104,34 @@ const ProspectingCopilot = () => {
               className="p-4 text-sm text-left mt-4 flex flex-col justify-start overflow-y-auto max-h-[30vh] mx-16 items-start gap-2 border-[1px] rounded-xl border-[#E9E9E9]"
             >
               <div className="font-semibold text-[#4B5563]">Emails</div>
-              {
-                <div className="flex flex-col gap-4 text-xs mt-2">
-                  {emailData.map((data, index) => (
-                    <div className="flex flex-col gap-4" key={index}>
-                      <div className="font-semibold flex items-center justify-start gap-2">
-                        <span>Subject:</span>
-                        {data.subject}
-                      </div>
-                      <div>{data.body}</div>
+              <div className="flex flex-col gap-4 text-xs mt-2">
+                {emailData.map((data, index) => (
+                  <div className="flex flex-col gap-4" key={index}>
+                    <div className="font-semibold flex items-center justify-start gap-2">
+                      <span>Subject:</span>
+                      {data.subject}
                     </div>
-                  ))}
-                </div>
-              }
+                    <div>{data.body}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="mt-4">
+              <div className="flex items-center justify-center gap-5">
+                {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-[1px] border-[#E9E9E9] rounded-md shadow-lg p-4 max-w-[12vw] text-start text-black h-[16vh] text-wrap flex items-center justify-center"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div>{item.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
-          {/* <div>
-          <div className='mt-4'>
-            <div className='flex items-center justify-center gap-5'>
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  className='border-[1px] border-[#E9E9E9] rounded-md shadow-lg p-4 max-w-[12vw] text-start text-black h-[16vh] text-wrap flex items-center justify-center'
-                >
-                  <div className='flex items-center gap-2'>
-                    <div>{item.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
         </div>
         <div className="w-[40vw] mt-6 mb-6">
           <div className="flex items-start mb-6 font-bold">
