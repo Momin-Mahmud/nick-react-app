@@ -174,10 +174,10 @@ const Sidebar = () => {
           <img src={'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="logo" className='w-8 h-8 object-cover rounded-full'/>
           <div className='flex flex-col items-start'>
             <span className='text-[10px] font-bold'>
-              John Smith
+              {localStorage.getItem('name') || 'User'}
             </span>
             <span className='text-[10px]'>
-                johnsmith@gmail...
+                {localStorage.getItem('email') || 'Email'}
             </span>
           </div>
           <Icon className={'cursor-pointer'} onClick={() => navigate('/')} name='logout' size='16'/>

@@ -28,7 +28,9 @@ const Login = () => {
     if (!error) {
       toast.success("Login Successfully.");
       console.log("Data: ", data);
+      localStorage.setItem('name', data?.data?.name)
       localStorage.setItem("user_id", data?.data?.user_id);
+      localStorage.setItem("email", data?.data?.email);
       localStorage.setItem("token", data?.data?.token);
       if (Object.keys(data?.data?.company_info).length != 0) {
         navigate("/chat");
