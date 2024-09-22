@@ -32,7 +32,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white border-b-2 border-gray-200 h-[7vh] ">
+    <header className="bg-white border-b-2 border-gray-200 h-[8vh] ">
       <nav
         className="flex items-center justify-between mx-4 px-16 py-2 lg:px-8"
         aria-label="Global"
@@ -59,6 +59,7 @@ const Header = () => {
             </span>
           ))}
         </div>
+        {!localStorage.getItem("token") && (
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
           <Button
             onClick={() => navigate("/login")}
@@ -67,6 +68,7 @@ const Header = () => {
           />
           <Button onClick={() => navigate("/signup")} innerText="Sign up" />
         </div>
+        )}
       </nav>
     </header>
   );

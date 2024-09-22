@@ -105,7 +105,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h-screen overflow-y-auto w-[calc(100vw-85vw)] bg-white p-2 border-r flex flex-col gap-4 justify-start items-center">
+    <div className="min-h-screen w-[calc(100vw-85vw)] bg-white p-2 border-r flex flex-col gap-4 justify-start items-center">
       <div className="flex gap-4 items-center justify-between mt-3">
         <div className="flex gap-2 items-center">
           <Icon name={"logo"} size="26" />
@@ -246,8 +246,11 @@ const Sidebar = () => {
           </span>
         </div>
         <Icon
-          className={"cursor-pointer"}
-          onClick={() => navigate("/")}
+          className="cursor-pointer"
+          onClick={() => {
+            localStorage.clear();
+            navigate("/login");
+          }}
           name="logout"
           size="16"
         />

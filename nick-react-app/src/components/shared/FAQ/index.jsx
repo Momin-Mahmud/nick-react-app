@@ -2,8 +2,7 @@ import React from "react";
 import SearchInput from "../../../components/base/SearchInput/SearchInput";
 import FAQCard from "../../../components/base/FAQCard/FAQCard";
 import Button from "../../base/Button/Button";
-import Group1 from "../../../assets/hero/Group18.png";
-import Content from '../../../assets/hero/Content.svg'
+import ChatTest from "../../../assets/hero/ChatTest.png";
 
 const Faq = () => {
   const data = [
@@ -42,8 +41,8 @@ const Faq = () => {
   return (
     <div>
       <img
-        src={Content}
-        className="w-full h-auto object-contain"
+        src={ChatTest}
+        className="w-full bg-white h-auto object-cover"
         alt="Description of the image"
         style={{ imageRendering: "auto" }}
       />
