@@ -1,10 +1,31 @@
 import Icon from "../../../../../../utils/Icon";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavItem from "./NavItem";
 import apiRequest from "../../../../../../utils/axios/api-request";
+import { useRecoilState } from "recoil";
+import { sessionDetail } from "../../../../../../atom";
 
 const ProspectList = ({ isOpen, sessionDetails }) => {
+  const [sessionData, setSessionData] = useState({});
+  const [selectedSessionDetail, setSelectedSessionDetail] =
+    useRecoilState(sessionDetail);
+
+  const handleSessionClick = async (session) => {
+    console.log(session);
+    const { data, error } = await apiRequest(
+      "get",
+      `session/user_sessions/${session?.session_id}`
+    );
+    if (error == null) {
+      console.log(data?.data);
+      setSessionData(data?.data);
+      setSelectedSessionDetail(data?.data);
+    } else {
+      console.error("Error: ", error);
+    }
+  };
+
   return (
     <div
       className={`flex flex-col transition-[max-height] duration-300 ease-in-out overflow-y-auto rounded-md ${
@@ -13,8 +34,12 @@ const ProspectList = ({ isOpen, sessionDetails }) => {
       style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -40px inset" }}
     >
       <span className="p-1">
-        {sessionDetails.map((session, index) => (
-          <div className="text-xs text-left" key={index}>
+        {sessionDetails?.map((session, index) => (
+          <div
+            className="text-xs text-left"
+            key={index}
+            onClick={() => handleSessionClick(session)}
+          >
             {session?.session_title}
           </div>
         ))}
@@ -123,18 +148,22 @@ const Sidebar = () => {
           onClick={() => navigate("/prospecting")}
         >
           <div className="flex items-center justify-between gap-1 min-w-full">
-            <div className="flex items-center text-start justify-between gap-2 min-w-full p-2 rounded-lg">
+            <div
+              className="flex items-center text-start justify-between gap-2 min-w-full p-2 rounded-lg"
+              onClick={() => handleProspectClick()}
+            >
               <div className="flex items-center gap-1">
                 <Icon name="prospecting" size="20" />
                 <span className="tracking-tight mb-2 text-sm font-medium">
                   Prospecting
                 </span>
-                <span className="px-2 mb-1 bg-[#F3F4F6] rounded-full text-xs">
-                  120
-                </span>
+                {sessionDetails?.length > 0 && (
+                  <span className="px-2 mb-1 bg-[#F3F4F6] rounded-full text-xs">
+                    {sessionDetails?.length}
+                  </span>
+                )}
               </div>
               <Icon
-                onClick={() => handleProspectClick()}
                 name="chevrondDown"
                 size="12"
                 className={`transform transition-transform duration-300 ${
