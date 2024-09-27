@@ -14,6 +14,7 @@ const apiRequest = async (method, url, options = {}) => {
       ...options,
       data: options.data || null,
     });
+    console.log('Response in API INStance', response.data)
     return { data: response.data, error: null, status: response.status };
   } catch (error) {
     return {

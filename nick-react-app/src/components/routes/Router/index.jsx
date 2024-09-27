@@ -10,6 +10,8 @@ import Pricing from "../../../pages/Pricing";
 import MyCompany from "../../../pages/MyCompany";
 import Signup from "../../../pages/Signup";
 import Onboarding from "../../../pages/Onboarding";
+import PaymentSuccessful from "../../base/PricingCard/PaymentSuccessful";
+import PaymentCancelled from "../../base/PricingCard/PaymentCancelled";
 
 const Router = () => {
 
@@ -43,6 +45,16 @@ const Router = () => {
           <Route path="/company" element={
             <GUARD_ROUTE>
               <MyCompany />
+            </GUARD_ROUTE>
+          }/>
+            <Route path="/payment-successful" element={
+            <GUARD_ROUTE>
+              <PaymentSuccessful />
+            </GUARD_ROUTE>
+          } />
+          <Route path="/payment-cancelled" element={
+            <GUARD_ROUTE>
+              <PaymentCancelled />
             </GUARD_ROUTE>
           }/>
           <Route path='/signup' element={<Signup />} />

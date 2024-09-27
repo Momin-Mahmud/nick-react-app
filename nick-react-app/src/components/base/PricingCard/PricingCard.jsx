@@ -8,17 +8,15 @@ import { useNavigate } from "react-router-dom";
 const PricingCard = (data) => {
   const cardData = data?.data;
 
-  const initiatePayment = (packageId) => {
-    debugger
-    const payload = {
-      id : packageId
-    }
-
-    const { data, error } = apiRequest("post", "/payment/checkout-session", {
-      data: payload
-    })
+  const initiatePayment = async (packageId) => {
+  
+    const { data, error } =  await apiRequest("post", `payment/checkout_session`, {
+      params: {
+        id: packageId,
+      },
+    });
     if (!error) {
-      console.log(data)
+      window.location.href = data;
     }
   }
 
