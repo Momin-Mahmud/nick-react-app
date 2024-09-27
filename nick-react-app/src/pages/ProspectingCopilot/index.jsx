@@ -174,7 +174,7 @@ const ProspectingCopilot = () => {
           <Button icon='currency' iconSize={16} size='small' innerText='Get More Credits' />
         </div>
       </div>
-      <div className='flex-col flex w-[85vw] min-h-[100vh] pt-16 gap-8 items-center overflow-scroll justify-end'>
+      <div className='flex-col flex w-[85vw] min-h-[100vh] pt-14 gap-8 items-center overflow-scroll justify-end'>
         <div className='flex-col items-center flex justify-center'>
           <div className='flex flex-col items-center gap-1 mb-4'>
             <div>

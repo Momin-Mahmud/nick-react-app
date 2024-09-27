@@ -1,10 +1,26 @@
-import React from "react";
 import Badge from "../Badge/Badge";
 import { StartedSvg } from "../../../utils/Svg";
 import { BuySvg } from "../../../utils/Svg";
+import apiRequest from "../../../utils/axios/api-request";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const PricingCard = (data) => {
   const cardData = data?.data;
+
+  const initiatePayment = (packageId) => {
+    debugger
+    const payload = {
+      id : packageId
+    }
+
+    const { data, error } = apiRequest("post", "/payment/checkout-session", {
+      data: payload
+    })
+    if (!error) {
+      console.log(data)
+    }
+  }
 
   return (
     <div className="flex items-start justify-start text-start w-[20vw]">
@@ -70,7 +86,6 @@ const PricingCard = (data) => {
               );
             }
 
-            // Default rendering for other features
             return (
               <li className="flex items-start" key={feature}>
                 <svg
@@ -95,7 +110,7 @@ const PricingCard = (data) => {
           })}
         </ul>
 
-        <button className="mt-5">
+        <button onClick={() => initiatePayment(cardData.packageId)} className="mt-5">
           {cardData.isFree ? StartedSvg : BuySvg}
         </button>
 

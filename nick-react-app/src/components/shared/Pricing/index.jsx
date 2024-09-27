@@ -28,6 +28,7 @@ const PricingCardsList = () => {
       badgeText: "Best Value",
       price: "37",
       tokens: "5k",
+      packageId: 1,
       words: "50k",
       features: [
         "Prospecting Research",
@@ -49,6 +50,7 @@ const PricingCardsList = () => {
       badgeIcon: "",
       badgeText: "",
       price: "97",
+      packageId: 2,
       tokens: "10k",
       words: "100k",
       features: [
@@ -72,6 +74,7 @@ const PricingCardsList = () => {
       title: "Organization",
       isBadge: true,
       badgeIcon: "trophy",
+      packageId: 3,
       badgeText: "Top Tier",
       price: "149",
       tokens: "20k",

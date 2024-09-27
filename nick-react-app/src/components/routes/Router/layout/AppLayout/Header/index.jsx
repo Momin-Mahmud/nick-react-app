@@ -59,16 +59,18 @@ const Header = () => {
             </span>
           ))}
         </div>
-        {!localStorage.getItem("token") && (
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
-          <Button
-            onClick={() => navigate("/login")}
-            type="secondary"
-            innerText="Log in"
-          />
-          <Button onClick={() => navigate("/signup")} innerText="Sign up" />
-        </div>
+          {!localStorage.getItem("token") && (
+            <>
+            <Button
+              onClick={() => navigate("/login")}
+              type="secondary"
+              innerText="Log in"
+            />
+            <Button onClick={() => navigate("/signup")} innerText="Sign up" />
+            </>
         )}
+        </div>
       </nav>
     </header>
   );
