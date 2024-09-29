@@ -9,7 +9,7 @@ const PricingCard = (data) => {
   const cardData = data?.data;
 
   const initiatePayment = async (packageId) => {
-  
+    localStorage.setItem("packageId", packageId);
     const { data, error } =  await apiRequest("post", `payment/checkout_session`, {
       params: {
         id: packageId,

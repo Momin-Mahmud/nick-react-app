@@ -6,8 +6,10 @@ const PaymentSuccessful = () => {
   const navigate = useNavigate()
   const subsribeSuccesss = async () => {
       const { data, error } = await apiRequest('post', `payment/subscribe`, {
-          data: { detail: {} }
+          data: { id: Number(localStorage.getItem('packageId')) }
     })
+    if (!error)
+      localStorage.removeItem('packageId')
   }
   useEffect(() => {
     subsribeSuccesss()
