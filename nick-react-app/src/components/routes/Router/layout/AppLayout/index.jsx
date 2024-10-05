@@ -18,7 +18,7 @@ const AppLayout = () => {
       pathname !== "/login";
 
   return (
-    <div className={`${checkPages() ? "min-h-screen" : "flex"}`}>
+    <div className={`${checkPages() ? "min-h-screen" : "flex min-h-full"}`}>
       {checkPages() ? <Header /> : renderSiderBar() && <Sidebar />}
         <Outlet />
     </div>

@@ -4,7 +4,7 @@ import Stepper from "./Stepper";
 
 const Onboarding = () => {
   return (
-    <div className=" bg-[#F3F4F6] flex w-full h-[100vh] relative">
+    <div className=" bg-[#F3F4F6] flex w-full min-h-full relative">
       <div className=" items-center justify-start w-[40vw] relative z-10">
         <div className="flex flex-col gap-6 justify-start items-start w-full">
           <div className="flex items-start justify-start gap-2 mt-[12vh] px-20">
