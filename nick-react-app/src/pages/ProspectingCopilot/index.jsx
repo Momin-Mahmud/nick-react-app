@@ -133,7 +133,8 @@ const ProspectingCopilot = () => {
           });
         }
 
-        setEmailData(emails);
+        // Reverse the email order before setting email data
+        setEmailData(emails.reverse());
         setShowEmail(true);
         setLoading(false);
       } else {
@@ -158,6 +159,7 @@ const ProspectingCopilot = () => {
         console.log("Data: ", data?.data?.prompts[0]?.response?.emails);
         setEmailData(data?.data?.prompts[0]?.response?.emails);
         setShowEmail(true);
+        setSelectedSessionDetail(data?.data);
         setLoading(false);
       } else {
         console.error("Error: ", error);
