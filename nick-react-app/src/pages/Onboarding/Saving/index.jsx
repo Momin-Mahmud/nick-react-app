@@ -23,9 +23,19 @@ const Saving = ({ formData }) => {
         "What Industries Are You Selling In To?": formData.industryYouSellingTo,
         "What product or service are you selling?":
           formData.productsOrServicesSelling,
+        "What Problem Does Your Product or Service Solve for Customers?":
+          formData.problemSolvingForCustomers,
+        "How Do You Solve The Problem Differently Or Better Than Your Competition?":
+          formData.differntOrBetterThanOthers,
+        "What Results or Proof Points Do You Have for Customers?":
+          formData.resultsOrProofsForCustomers,
+        "What Business Outcomes Do You Achieve for Your Clients?":
+          formData.businessOutcomesForClients,
+        "What is the best time to reach you?": formData.bestTimeToReach,
         "What is the website of your business?": formData.companyWebsite,
       },
     };
+
     console.log("Obj is: ", obj);
     const { data, error } = await apiRequest(
       "post",

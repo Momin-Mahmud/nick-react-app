@@ -19,7 +19,7 @@ const Header = () => {
     },
     {
       name: "About",
-      path: "/onboarding",
+      path: "",
     },
     // {
     //   name: "Blog",
@@ -62,14 +62,14 @@ const Header = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
           {!localStorage.getItem("token") && (
             <>
-            <Button
-              onClick={() => navigate("/login")}
-              type="secondary"
-              innerText="Log in"
-            />
-            <Button onClick={() => navigate("/signup")} innerText="Sign up" />
+              <Button
+                onClick={() => navigate("/login")}
+                type="secondary"
+                innerText="Log in"
+              />
+              <Button onClick={() => navigate("/signup")} innerText="Sign up" />
             </>
-        )}
+          )}
         </div>
       </nav>
     </header>

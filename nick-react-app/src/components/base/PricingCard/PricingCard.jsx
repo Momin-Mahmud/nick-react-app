@@ -10,15 +10,19 @@ const PricingCard = (data) => {
 
   const initiatePayment = async (packageId) => {
     localStorage.setItem("packageId", packageId);
-    const { data, error } =  await apiRequest("post", `payment/checkout_session`, {
-      params: {
-        id: packageId,
-      },
-    });
+    const { data, error } = await apiRequest(
+      "post",
+      `payment/checkout_session`,
+      {
+        params: {
+          id: packageId,
+        },
+      }
+    );
     if (!error) {
       window.location.href = data;
     }
-  }
+  };
 
   return (
     <div className="flex items-start justify-start text-start w-[20vw]">
@@ -108,7 +112,10 @@ const PricingCard = (data) => {
           })}
         </ul>
 
-        <button onClick={() => initiatePayment(cardData.packageId)} className="mt-5">
+        <button
+          onClick={() => initiatePayment(cardData.packageId)}
+          className="mt-5"
+        >
           {cardData.isFree ? StartedSvg : BuySvg}
         </button>
 

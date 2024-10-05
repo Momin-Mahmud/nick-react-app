@@ -177,7 +177,7 @@ const Sidebar = () => {
             sessionDetails={sessionDetails}
           />
         </div>
-        <div className="flex flex-col gap-0 items-center justify-center min-w-full cursor-pointer hover:bg-[#F5F3FF]">
+        {/* <div className="flex flex-col gap-0 items-center justify-center min-w-full cursor-pointer hover:bg-[#F5F3FF]">
           <div className="flex items-center justify-between gap-1 min-w-full">
             <div className="flex items-center text-start justify-between gap-2 min-w-full p-2 rounded-lg">
               <div className="flex items-center gap-1">
@@ -200,7 +200,7 @@ const Sidebar = () => {
             </div>
           </div>
           <DiscoveryList isOpen={discoveriesOpen} />
-        </div>
+        </div> */}
       </div>
       <div className="min-w-full p-2">
         <div className="flex flex-col items-center text-start justify-start gap-1 min-w-full rounded-lg">
@@ -214,8 +214,8 @@ const Sidebar = () => {
             size="16"
             text="My company"
           />
-          <NavItem icon="personas" size={16} text={"Personas"} />
-          <NavItem icon="integrations" size="16" text={"Integrations"} />
+          {/* <NavItem icon="personas" size={16} text={"Personas"} />
+          <NavItem icon="integrations" size="16" text={"Integrations"} /> */}
         </div>
       </div>
       <div className="min-w-full mt-56 p-2">
