@@ -11,7 +11,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "../../components/base/Spinner";
 
-const Signup = () => {
+const ForgotPassword = () => {
   const [formData, setFormData] = useState({
     email: "",
   });
@@ -25,20 +25,20 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const { data, error } = await apiRequest("POST", "auth/sign_up", {
+      const { data, error } = await apiRequest("POST", "auth/forgot_password", {
         data: userObj,
       });
       setLoading(false);
       if (error) {
-        toast.error("Error signing up.");
+        toast.error("Error resetting password.");
         console.error("Error: ", error);
       } else {
-        toast.success("Signup Successfully.");
+        toast.success("Password Reset Successfully.");
         console.log("Data: ", data);
         navigate("/login");
       }
     } catch (err) {
-      console.error("Error in signup process:", err);
+      console.error("Error in resetting password process:", err);
     }
   };
 
@@ -74,8 +74,8 @@ const Signup = () => {
             </div>
 
             <div className="mt-14 w-[30vw] mx-auto">
-              We recommend using a work email to easily collaborate with your
-              team.
+              Enter the email address associated with your account and we’ll
+              send you a new password.
               <div className="space-y-6" action="#" method="POST">
                 <div>
                   <div className="flex items-center justify-between">
@@ -180,4 +180,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default ForgotPassword;

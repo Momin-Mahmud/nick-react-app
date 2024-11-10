@@ -12,57 +12,79 @@ import Signup from "../../../pages/Signup";
 import Onboarding from "../../../pages/Onboarding";
 import PaymentSuccessful from "../../base/PricingCard/PaymentSuccessful";
 import PaymentCancelled from "../../base/PricingCard/PaymentCancelled";
+import ForgotPassword from "../../../pages/ForgotPassword";
 
 const Router = () => {
-
   const GUARD_ROUTE = (props) => {
     const { children } = props;
-    if (localStorage.getItem("token") )
+    if (localStorage.getItem("token"))
       return <React.Fragment>{children}</React.Fragment>;
-    return <Navigate to={'/login'} replace />;
+    return <Navigate to={"/login"} replace />;
   };
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/chat" element={
-            <GUARD_ROUTE>
-              <ChatHome />
-            </GUARD_ROUTE>  
-          } />
-          <Route path="/login" element={<Login />} />
-          <Route path="prospecting" element={
-            <GUARD_ROUTE>
-              <ProspectingCopilot />
-            </GUARD_ROUTE> 
-          } />
-          <Route path="/pricing" element={
-            <GUARD_ROUTE>
-              <Pricing />
-            </GUARD_ROUTE>  
-          } />
-          <Route path="/company" element={
-            <GUARD_ROUTE>
-              <MyCompany />
-            </GUARD_ROUTE>
-          }/>
-            <Route path="/payment-successful" element={
-            <GUARD_ROUTE>
-              <PaymentSuccessful />
-            </GUARD_ROUTE>
-          } />
-          <Route path="/payment-cancelled" element={
-            <GUARD_ROUTE>
-              <PaymentCancelled />
-            </GUARD_ROUTE>
-          }/>
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/onboarding' element={
-            <GUARD_ROUTE>
-              <Onboarding />
+          <Route
+            path="/chat"
+            element={
+              <GUARD_ROUTE>
+                <ChatHome />
               </GUARD_ROUTE>
-          } />
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="prospecting"
+            element={
+              <GUARD_ROUTE>
+                <ProspectingCopilot />
+              </GUARD_ROUTE>
+            }
+          />
+          <Route
+            path="/pricing"
+            element={
+              <GUARD_ROUTE>
+                <Pricing />
+              </GUARD_ROUTE>
+            }
+          />
+          <Route
+            path="/company"
+            element={
+              <GUARD_ROUTE>
+                <MyCompany />
+              </GUARD_ROUTE>
+            }
+          />
+          <Route
+            path="/payment-successful"
+            element={
+              <GUARD_ROUTE>
+                <PaymentSuccessful />
+              </GUARD_ROUTE>
+            }
+          />
+          <Route
+            path="/payment-cancelled"
+            element={
+              <GUARD_ROUTE>
+                <PaymentCancelled />
+              </GUARD_ROUTE>
+            }
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="/onboarding"
+            element={
+              <GUARD_ROUTE>
+                <Onboarding />
+              </GUARD_ROUTE>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -27,7 +27,7 @@ const Login = () => {
     if (!error) {
       toast.success("Login Successfully.");
       console.log("Data: ", data);
-      localStorage.setItem('name', data?.data?.name)
+      localStorage.setItem("name", data?.data?.name);
       localStorage.setItem("user_id", data?.data?.user_id);
       localStorage.setItem("email", data?.data?.email);
       localStorage.setItem("token", data?.data?.token);
@@ -179,6 +179,17 @@ const Login = () => {
                     >
                       Log in
                     </button>
+                  </div>
+                  <div
+                    className="text-sm flex items-center justify-center"
+                    onClick={() => navigate("/forgot-password")}
+                  >
+                    <a
+                      href="#"
+                      className="text-[#6B7280] font-light mt-4 hover:text-indigo-500"
+                    >
+                      Forgot Password?
+                    </a>
                   </div>
                   <div
                     className="text-sm flex items-center justify-center"

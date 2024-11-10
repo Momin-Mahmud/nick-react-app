@@ -10,17 +10,19 @@ const AppLayout = () => {
     pathname !== "/company" &&
     pathname !== "/onboarding" &&
     pathname !== "/signup" &&
+    pathname !== "/forgot-password" &&
     pathname !== "/login";
 
-  const renderSiderBar = () => 
+  const renderSiderBar = () =>
     pathname !== "/onboarding" &&
-      pathname !== "/signup" &&
-      pathname !== "/login";
+    pathname !== "/signup" &&
+    pathname !== "/forgot-password" &&
+    pathname !== "/login";
 
   return (
     <div className={`${checkPages() ? "min-h-screen" : "flex min-h-full"}`}>
       {checkPages() ? <Header /> : renderSiderBar() && <Sidebar />}
-        <Outlet />
+      <Outlet />
     </div>
   );
 };
